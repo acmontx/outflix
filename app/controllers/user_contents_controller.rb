@@ -1,0 +1,2 @@
+class UserContentsController < ApplicationController
+end
