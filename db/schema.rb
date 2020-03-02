@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_105921) do
+ActiveRecord::Schema.define(version: 2020_03_02_170352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contents", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "genre"
+    t.string "netflixid"
+    t.string "image_url"
+    t.string "plot"
+    t.date "expiration_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.text "message"
+    t.datetime "date_sent"
+    t.boolean "read"
+    t.string "medium"
+    t.bigint "user_content_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_content_id"], name: "index_notifications_on_user_content_id"
+  end
+
+  create_table "user_contents", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "content_id"
+    t.boolean "in_my_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_user_contents_on_content_id"
+    t.index ["user_id"], name: "index_user_contents_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +56,15 @@ ActiveRecord::Schema.define(version: 2020_03_02_105921) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "country"
+    t.string "netflix_details"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "user_contents"
+  add_foreign_key "user_contents", "contents"
+  add_foreign_key "user_contents", "users"
 end
