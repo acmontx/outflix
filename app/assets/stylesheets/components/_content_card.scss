@@ -1,0 +1,31 @@
+.cards-container {
+  overflow: hidden;
+  background: white;
+}
+
+.cards-container > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.cards-container.card-content-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
