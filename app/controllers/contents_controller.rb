@@ -1,8 +1,11 @@
+
 class ContentsController < ApplicationController
 
   def index
-    @service = FetchTitles.new
-    FetchTitles.getCountries
+    @service =FetchTitles.new
+
+    country = current_user.country
+    @content = @service.getExpiringContent(country)
   end
 
   def show
@@ -14,6 +17,7 @@ class ContentsController < ApplicationController
   def setup
     @service = FetchTitles.new
     country = current_user.country
-    NetflixAPIService.call(request)
+    country_id = @service.getCountries[country]
+    @titles_list = @service.getTitlesPerCountry(country_id)
   end
 end
