@@ -1,0 +1,32 @@
+<h1>Contents#setup</h1>
+
+<h4>Import your 'My List' from your Netflix account </h4>
+<p>DISCLAIMER: You'll need to enter your netflix email/password BUT we won't save these details.</p>
+
+<div class="container">
+  <div class="nf-list">
+    <%= form_for :nf_list, url: "contents/browse_list" do |f| %>
+      <div>
+        <%= f.label :nf_email %>
+        <%= f.text_field :nf_email, id: 'nf-email' %>
+      </div>
+      <div>
+        <%= f.label :nf_pass %>
+        <%= f.password_field :nf_pass, id: 'nf-pass' %>
+      </div>
+      <div>
+        <%= f.submit 'Search list', id: 'browse-list' %>
+      </div>
+    <% end  %>
+  </div>
+</div>
+
+
+<!-- <div>
+  <%# @titles_list.each do |cont| %>
+    <p>
+      <%#= cont[:title] %>
+    </p>
+  <%# end %>
+</div>
+ -->

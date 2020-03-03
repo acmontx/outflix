@@ -11,7 +11,7 @@ class FetchTitles
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'b719473d32msh887dc3ee40f527ap1a89ebjsn7af94eb012d8'
+    request["x-rapidapi-key"] = ENV['X-RAPIDAPI-KEY']
 
     response = http.request(request)
 
@@ -51,7 +51,7 @@ class FetchTitles
 
   def getTitlesPerCountry(countryId)
     result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
-
+    p result
     content = result["ITEMS"].map { |item|
       {
         netflixid: item["netflixid"],
