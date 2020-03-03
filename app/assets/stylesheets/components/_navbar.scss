@@ -1,12 +1,54 @@
 .navbar-lewagon {
+  padding: 0px 16px 0px;
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(to bottom right, #180D33, #1C0D31);
+  font-family: Oswald, sans-serif;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand {
+  font-family: Six Caps, sans-serif;
+  font-size: 60px;
+  color: white;
+  text-shadow: 3px 3px #8928BA;
+  padding-left: 20px;
+}
+
+.navbar-lewagon .navbar-brand:hover {
+  color: white;
+}
+
+.main-name {
+  font-size: 34px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px lightgrey;
+}
+
+.nav-item {
+  padding: 0px 15px 0px;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.btn-signin {
+  color: white;
+  padding: 8px 18px;
+  border: 1px solid #1C0D31;
+}
+
+.btn-signin:hover {
+  color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  text-decoration: none;
 }
