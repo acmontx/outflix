@@ -7,4 +7,6 @@ class ContentsController < ApplicationController
 
   def edit
   end
+
+
 end
