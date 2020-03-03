@@ -16,6 +16,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'country_select'
+gem 'nokogiri'
+gem 'pg_search'
+gem 'pundit'
+gem 'rails-social-share-button'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
