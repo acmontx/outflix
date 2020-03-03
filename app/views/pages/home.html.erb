@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80);">
+  <div class="intro-container">
+    <div class="illustration">
+      <%= image_tag "undraw_star_wars.svg", alt: "star wars" %>
+    </div>
+    <div class="intro">
+      <h2>Never miss out on the chance to watch a Netflix title before it leaves the platform ever again</h2>
+    </div>
+  </div>
+
+  <div class="signup-container">
+    <li class="btn-signup">
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
+    </li>
+  </div>
+  <li class="signup-info" align="center">
+    It's free!
+  </li>
+</div>
+</div>
