@@ -2,10 +2,12 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
+
 # This is the code to use with the API. It's commented out because I'm using
 # the other file to use with json and not use the API
 # If you uncomment this code and change the method names on the controller,
 # you can use the API, but please change the x-rapidapi-key.
+
 
 class FetchTitles
 
