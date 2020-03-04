@@ -8,6 +8,7 @@
  <%= cont[:netflixid] %> - <%= cont[:title] %>
  <%= cont[:plot] %> - <%= cont[:category] %> - <%= cont[:expiration_date] %>
  <img src=" <%= cont[:image_url] %>" />
+ <%= link_to 'See details' content_path(cont) %>
 </p>
  <% end %>
 </div>

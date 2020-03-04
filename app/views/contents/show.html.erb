@@ -1,2 +1,31 @@
-<h1>Contents#show</h1>
-<p>Find me in app/views/contents/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="ml-4 pl-3">
+        <%= link_to 'Go back', :back %>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center border rounded py-3 my-5">
+    <div class="col-12 col-lg-4">
+      <div class="content_params-description m-2 p-2">
+
+        <div class="session-poster" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url(<%= cont[:image_url] %>)"></div>
+        <%#= render '/shared/session-poster', session: @session %>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="p-4">
+        <div class="">
+          <p>Plot:</p>
+          <p><%= cont[:plot] %></p>
+        </div>
+        <div class="mt-4">
+          <%= link_to 'Share', '#', class:"btn btn-outline-dark", id:"share-btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

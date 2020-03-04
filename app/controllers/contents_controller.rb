@@ -1,4 +1,3 @@
-
 class ContentsController < ApplicationController
 
   def index
@@ -12,9 +11,15 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find_by(params[:id])
   end
 
   def edit
   end
 
+  private
+
+  # def content_params
+  #   params.require(:content).permit()
+  # end
 end
