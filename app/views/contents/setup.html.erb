@@ -13,11 +13,14 @@
   </div>
 
   <div class="row justify-content-center">
-<!--    <%#= simple_form_for @contents do |f| %>
-    <%#= f.input :title, as: :autocomplete, source: autocomplete_contents__path %>
+<!--
+    <#%= simple_form_for @contents do |f| %>
+    <%#= f.input :title, as: :autocomplete, source: autocomplete_contents_path %>
     <#% end %>
 
--->
+    -->
+
+
     <form autocomplete="off" action="/action_page.php">
       <div class="autocomplete" style="width:300px;">
         <input id="myInput" type="text" name="myCountry" placeholder="Content Search">
@@ -27,21 +30,24 @@
   </div>
 </div>
 
+
 <div class="row justify-content-center">
   <h3>Content list</h3>
-  <ul>
-<!--    <%# @movies.each do |movie| %>
-      <li><%#= movie.title %></li>
-    <%# end %>
 
-  -->
+<!--
+  <ul>
+    <%# @contents.each do |movie| %>
+      <li><%#= contents.title %></li>
+    <%# end %>
 </ul>
+
+-->
 </div>
 
 
 
 
-<div class="add1">
+<div class="btnadd">
   <%= link_to "Add", "#", class: "btn btn-dark" %>
 </div>
 </div>

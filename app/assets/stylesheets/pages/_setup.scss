@@ -9,12 +9,23 @@ h3{
   padding-bottom: 20px;
 }
 
-.add1{
 
-    width: 100px;
-    margin-left: auto;
-    margin-right: 100px;
+.btnadd {
+
+  font-family: Oswald, sans-serif;
+  width: 100px;
+  margin-left: auto;
+  margin-right: 100px;
+  border-radius: 10px;
+
 }
+
+.btnadd :hover {
+  background: linear-gradient(#FBC6CF, #EF3D5B);
+  color: white;
+}
+
+
 
 
 * { box-sizing: border-box; }
@@ -29,8 +40,10 @@ body {
 input {
   border: 1px solid grey;
   background-color: white;
+  opacity: 0.94;
   padding: 10px;
   font-size: 16px;
+  border-radius: 10px;
 }
 input[type=text] {
   background-color: white;
