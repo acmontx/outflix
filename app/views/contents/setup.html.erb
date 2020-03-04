@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-6">
       <h3>Import your 'My List' from your Netflix account </h3>
@@ -6,70 +6,69 @@
       <div class="nf-list">
         <div class="row justify-content-center">
           <div class="new-form">
-            <%= simple_form_for :nf do |f| %>
+            <%#= simple_form_for :nf do |f| %>
 
             <div class="new-fields">
-              <%= f.input :nf_email %>
-              <%= f.input :nf_pass %>
+              <%#= f.input :nf_email %>
+              <%#= f.input :nf_pass %>
             </div>
 
             <div class="new-button">
-              <%= f.submit "Submit", id: 'browse-list', class: "btn btn-dark" %>
+              <%#= f.submit "Submit", id: 'browse-list', class: "btn btn-dark" %>
             </div>
-            <% end %>
+            <%# end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-
-<!--
-
-      <br>
+<div class="container-setup">
+  <div class="row">
+    <div class="mx-auto" style="width: 500px;">
       <h3>Content setup</h3>
       <textarea placeholder="Import your list. Instructions to import." rows="4" cols="50"></textarea>
     </div>
   </div>
 
   <div class="row justify-content-center">
+
     <h3>Or select titles</h3>
+
   </div>
 
-  <div class="row justify-content-center"> -->
-<!--    <%#= simple_form_for @contents do |f| %>
-    <%#= f.input :title, as: :autocomplete, source: autocomplete_contents__path %>
+  <div class="row justify-content-center">
+<!--
+    <#%= simple_form_for @contents do |f| %>
+    <%#= f.input :title, as: :autocomplete, source: autocomplete_contents_path %>
     <#% end %>
--->
-   <!--  <form autocomplete="off" action="/action_page.php">
+    -->
+
+
+    <form autocomplete="off" action="/action_page.php">
       <div class="autocomplete" style="width:300px;">
         <input id="myInput" type="text" name="myCountry" placeholder="Content Search">
       </div>
       <input type="submit">
     </form>
-  </div> -->
-
-<!-- <div class="row justify-content-center">
-  <h3>Content list</h3>
-  <ul> -->
-<!--    <%# @movies.each do |movie| %>
-      <li><%#= movie.title %></li>
-    <%# end %>
-  -->
-<!-- </ul>
-</div> -->
-
-<!-- <div>
-  <%# @titles_list.each do |cont| %>
-    <p>
-      <%#= cont[:title] %>
-    </p>
-  <%# end %>
+  </div>
 </div>
- -->
 
 
-<div class="add1">
+<div class="row justify-content-center">
+  <h3>Content list</h3>
+
+<!--
+  <ul>
+    <%# @contents.each do |movie| %>
+      <li><%#= contents.title %></li>
+    <%# end %>
+</ul>
+-->
+</div>
+
+<div class="btnadd">
   <%= link_to "Add", "#", class: "btn btn-dark" %>
+</div>
 </div>

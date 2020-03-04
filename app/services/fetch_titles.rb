@@ -19,6 +19,11 @@ class FetchTitles
     result = JSON.parse(body)
   end
 
+# This is the code to use with the API. It's commented out because I'm using
+# the other file to use with json and not use the API
+# If you uncomment this code and change the method names on the controller,
+# you can use the API, but please change the x-rapidapi-key.
+
   def getCountries
     result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=lc&q=available")
     # result["ITEMS"][0][0] = 268 - country id
