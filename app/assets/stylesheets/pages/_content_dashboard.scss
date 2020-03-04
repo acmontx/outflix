@@ -1,0 +1,40 @@
+.dashboard-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.weekly-content {
+  border-left: 1vw solid #F7F7F8;
+  border-right: 1vw solid #F7F7F8;
+  border-bottom: 0.8vw solid #F7F7F8;
+  padding-bottom: 0px;
+  background-color: white;
+}
+
+.cards-container.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.weekly-content h3 {
+  font-family: 'Oswald', sans-serif;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+
+.card-content.dashboard {
+  width: auto;
+  margin: 0 10px 10px;
+}
+
+.card-content-info p {
+  text-align: center;
+  padding-top: 5px;
+}
+
+
+
