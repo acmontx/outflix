@@ -1,5 +1,5 @@
 
-<div class="page-container">
+<div class="dashboard-container">
 
   <!-- <div class="dashboard-container col-12"> -->
 
@@ -8,13 +8,15 @@
       <div class="cards-container dashboard">
         <% @weeks[33].each do |cont| %>
         <div class="card-content dashboard">
+          <%= link_to content_path(cont[:imdbid]) do %>
           <img src="<%= cont[:image_url] %>" />
           <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %> </p>
+            <p> <%= cont[:expiration_date] %></p>
+            <% end %>
           </div>
         </div>
         <% end %>
-      </div>
+      </div>4
     </div>
 
     <div class="weekly-content">
@@ -24,7 +26,7 @@
         <div class="card-content dashboard">
           <img src="<%= cont[:image_url] %>" />
           <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %> </p>
+            <p> <%= cont[:expiration_date] %></p>
           </div>
         </div>
         <% end %>

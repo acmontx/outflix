@@ -1,17 +1,20 @@
-require 'byebug'
 require 'date'
 
 class ContentsController < ApplicationController
 
+  @category_filter = "ALL"
+
   def index
-    @service =FetchTitlesJson.new
+    @service = FetchTitlesJson.new
 
     # @countries = @service.getCountries
     country = current_user.country
 
     @content = @service.getExpiringContent(country)
+    @all = @content.clone
 
     groupByWeek
+
   end
 
   def groupByWeek
@@ -24,8 +27,30 @@ class ContentsController < ApplicationController
    @week36 = @weeks[36]
   end
 
-  # def show
-  # end
+  def filter
+    @content = @all.clone
+
+    if @category_filter != "ALL"
+      @content = @content.select { |cont| cont[:category] == @category_filter }
+    end
+    groupByWeek
+
+  end
+
+  def filterSeries #example to test filter
+    @category_filter = "series"
+
+    filter
+  end
+
+
+  def show
+
+    @service = FetchTitlesJson.new
+
+    @content = @service.getContentDetails(params[:id])
+
+  end
 
   # def edit
   # end
