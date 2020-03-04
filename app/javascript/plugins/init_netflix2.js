@@ -26,19 +26,11 @@ module.exports = Netflix
 
 // Grab users nf details
 
-const nfEmail = document.querySelector('#nf-email');
-const nfPass = document.querySelector('#nf-pass');
-const sessionCard = document.querySelector('.session-booking-card');
-
-shareButton.addEventListener('click', (event) => {
-  console.log('here');
-  if (socialButtons.classList.contains('d-none')) {
-    socialButtons.classList.remove('d-none');
-    socialButtons.classList.add('d-block');
-  } else {
-    socialButtons.classList.remove('d-block');
-    socialButtons.classList.add('d-none');
-  }
+const getCredentials = browseBtn.addEventListener('click', (event) => {
+  const nfEmail = document.querySelector('#nf_nf_email').value;
+  const nfPass = document.querySelector('#nf_nf_pass').value;
+  email: nfEmail,
+  password: nfPass
 });
 
 
@@ -48,7 +40,8 @@ var Netflix = require('netflix2')
 var netflix = new Netflix()
 
 var credentials = {
-  email: 'vanessaesanto@gmail.com',
+  // email: 'vanessaesanto@gmail.com',
+  email: ,
   // password: 'ifP4hkQ!vKmqCz!*jFvN'
   password: // grab from event listener
 }
@@ -56,10 +49,15 @@ var credentials = {
 netflix.login(credentials, function (error) {
   if (error) return console.error('cannot log in', error)
   console.log('logged in')
-  // netflix.getProfiles(function (error, profiles) {
-  //   console.log(profiles, error)
-  // })
 
+  netflix.getProfiles(function (error, profiles) {
+    console.log(profiles, error)
+  })
+
+  // need function to show and select profile
+
+
+  // netflix.switchProfile('user's GUID, function (error) {
   netflix.switchProfile('LLUVWL2OPRD3TE4JZYNNCJFRSA', function (error) {
     if (error) return console.error('cannot switch', error);
     console.log('switched profile')

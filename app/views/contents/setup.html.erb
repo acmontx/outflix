@@ -1,23 +1,32 @@
-<div class="container-setup">
+<div class="container">
   <div class="row">
-  <h3>Import your 'My List' from your Netflix account </h3>
-  <p>DISCLAIMER: You'll need to enter your netflix email/password BUT we won't save these details.</p>
-    <div class="mx-auto" style="width: 500px;">
+    <div class="col-6">
+      <h3>Import your 'My List' from your Netflix account </h3>
+      <p>DISCLAIMER: You'll need to enter your netflix email/password BUT we won't save these details.</p>
       <div class="nf-list">
-        <%= form_for :nf_list, url: "contents/browse_list" do |f| %>
-          <div>
-            <%= f.label :nf_email %>
-            <%= f.text_field :nf_email, id: 'nf-email' %>
+        <div class="row justify-content-center">
+          <div class="new-form">
+            <%= simple_form_for :nf do |f| %>
+
+            <div class="new-fields">
+              <%= f.input :nf_email %>
+              <%= f.input :nf_pass %>
+            </div>
+
+            <div class="new-button">
+              <%= f.submit "Submit", id: 'browse-list', class: "btn btn-dark" %>
+            </div>
+            <% end %>
           </div>
-          <div>
-            <%= f.label :nf_pass %>
-            <%= f.password_field :nf_pass, id: 'nf-pass' %>
-          </div>
-          <div>
-            <%= f.submit 'Search list', id: 'browse-list' %>
-          </div>
-        <% end  %>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+
       <br>
       <h3>Content setup</h3>
       <textarea placeholder="Import your list. Instructions to import." rows="4" cols="50"></textarea>
@@ -28,29 +37,28 @@
     <h3>Or select titles</h3>
   </div>
 
-  <div class="row justify-content-center">
+  <div class="row justify-content-center"> -->
 <!--    <%#= simple_form_for @contents do |f| %>
     <%#= f.input :title, as: :autocomplete, source: autocomplete_contents__path %>
     <#% end %>
 -->
-    <form autocomplete="off" action="/action_page.php">
+   <!--  <form autocomplete="off" action="/action_page.php">
       <div class="autocomplete" style="width:300px;">
         <input id="myInput" type="text" name="myCountry" placeholder="Content Search">
       </div>
       <input type="submit">
     </form>
-  </div>
-</div>
+  </div> -->
 
-<div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
   <h3>Content list</h3>
-  <ul>
+  <ul> -->
 <!--    <%# @movies.each do |movie| %>
       <li><%#= movie.title %></li>
     <%# end %>
   -->
-</ul>
-</div>
+<!-- </ul>
+</div> -->
 
 <!-- <div>
   <%# @titles_list.each do |cont| %>
@@ -64,5 +72,4 @@
 
 <div class="add1">
   <%= link_to "Add", "#", class: "btn btn-dark" %>
-</div>
 </div>
