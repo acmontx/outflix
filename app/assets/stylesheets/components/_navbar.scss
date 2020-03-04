@@ -40,13 +40,14 @@
   cursor: pointer;
 }
 
-.btn-signin {
+.btn-login {
   color: white;
   padding: 8px 18px;
   border: 1px solid #1C0D31;
+  font-size: 18px;
 }
 
-.btn-signin:hover {
+.btn-login:hover {
   color: lightgrey;
   border: 1px solid lightgrey;
   border-radius: 3px;
