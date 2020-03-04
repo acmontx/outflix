@@ -38,6 +38,7 @@ def getContentDetails(imdbid)
   content = {
     genre: result["genre"],
     plot: result["plot"],
+    # add more details
   }
 end
 
