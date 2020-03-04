@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_170352) do
+ActiveRecord::Schema.define(version: 2020_03_04_113709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2020_03_02_170352) do
     t.date "expiration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "titles_api_result"
+    t.jsonb "expiring_api_result"
+    t.jsonb "countries_api_result"
   end
 
   create_table "notifications", force: :cascade do |t|
