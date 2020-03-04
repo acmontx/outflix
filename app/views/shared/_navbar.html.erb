@@ -3,6 +3,7 @@
     O U T F L I X
   <% end %>
 
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,21 +15,21 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Dashboard", index_contents_path, class: "nav-link" %>
+          <%= link_to "Dashboard", contents_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://cdn4.iconfinder.com/data/icons/audio-and-video/512/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <% if policy(Session).create? %>
-              <%= link_to "Create session", new_session_path, class: "dropdown-item" %>
-            <% end %>
+            <%# if policy(Session).create? %>
+              <%#= link_to "Create session", new_session_path, class: "dropdown-item" %>
+            <%# end %>
             <%= link_to "Preferences", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item active">
-          <%= link_to "Log In", new_user_session_path, class: "btn-signin" %>
+          <%= link_to "Log In", new_user_session_path, class: "btn-login" %>
         </li>
       <% end %>
     </ul>
