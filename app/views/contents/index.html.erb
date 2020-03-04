@@ -6,7 +6,7 @@
     <div class="weekly-content">
       <h3> WEEK 1 </h3>
       <div class="cards-container dashboard">
-        <% @content.each do |cont| %>
+        <% @weeks[33].each do |cont| %>
         <div class="card-content dashboard">
           <img src="<%= cont[:image_url] %>" />
           <div class="card-content-info">
@@ -16,12 +16,48 @@
         <% end %>
       </div>
     </div>
+
     <div class="weekly-content">
     <h3> WEEK 2 </h3>
-    </div>
-    <div class="weekly-content">
-    <h3> WEEK 3 </h3>
-    </div>
+      <div class="cards-container dashboard">
+        <% @week34.each do |cont| %>
+        <div class="card-content dashboard">
+          <img src="<%= cont[:image_url] %>" />
+          <div class="card-content-info">
+            <p> <%= cont[:expiration_date] %> </p>
+          </div>
+        </div>
+        <% end %>
     </div>
   </div>
+
+    <div class="weekly-content">
+    <h3> WEEK 3 </h3>
+    <div class="cards-container dashboard">
+        <% @week35.each do |cont| %>
+        <div class="card-content dashboard">
+          <img src="<%= cont[:image_url] %>" />
+          <div class="card-content-info">
+            <p> <%= cont[:expiration_date] %> </p>
+          </div>
+        </div>
+        <% end %>
+    </div>
+    </div>
+
+    <div class="weekly-content">
+    <h3> WEEK 4 </h3>
+    <div class="cards-container dashboard">
+        <% @week36.each do |cont| %>
+        <div class="card-content dashboard">
+          <img src="<%= cont[:image_url] %>" />
+          <div class="card-content-info">
+            <p> <%= cont[:expiration_date] %> </p>
+          </div>
+        </div>
+        <% end %>
+    </div>
+    </div>
+
 </div>
+
