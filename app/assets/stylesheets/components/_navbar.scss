@@ -10,12 +10,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  padding: 5px auto;
+  margin: 15px 15px;
   height: 75px;
-}
-
-.navbar-lewagon .navbar-brand:hover {
-  color: white;
 }
 
 .main-name {
@@ -53,4 +49,10 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
   text-decoration: none;
+}
+
+.avatar {
+  margin-right: 15px;
+  height: 45px;
+  width: 45px;
 }

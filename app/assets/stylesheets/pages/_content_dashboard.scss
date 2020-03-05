@@ -1,28 +1,35 @@
+.dashboard-background {
+  background-size: cover;
+  background-position: center;
+  padding: 15px 0;
+  font-family: Oswald, sans-serif;
+}
+
 .dashboard-container {
   width: 95%;
-  margin: 0 auto;
+  margin: 35px auto;
 }
 
 .weekly-content {
-  border-left: 1vw solid #F7F7F8;
-  border-right: 1vw solid #F7F7F8;
-  border-bottom: 0.8vw solid #F7F7F8;
-  padding-bottom: 0px;
+  border-left: 1vw solid clear;
+  border-right: 1vw solid clear;
+  border-bottom: 0.8vw solid clear;
+  border-radius: 10px;
+  padding-bottom: 10px;
   background-color: white;
+  margin: 0 auto 25px;
 }
 
 .cards-container.dashboard {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .weekly-content h3 {
   font-family: 'Oswald', sans-serif;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0 20px 30px;
   margin-bottom: 0px;
 }
 

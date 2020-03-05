@@ -74,4 +74,5 @@ class ContentsController < ApplicationController
     @service = FetchTitlesJson.new
     @content = @service.getContentDetails(params[:id])
   end
+end
 
