@@ -2,7 +2,8 @@ require 'date'
 
 class ContentsController < ApplicationController
 
-  @category_filter = "ALL"
+  @category_filter = nil
+  @rating_filter = nil
 
   def index
     @service = FetchTitlesJson.new
@@ -15,44 +16,51 @@ class ContentsController < ApplicationController
 
     groupByWeek
 
+    # filterCategory("movie")
+    filterByRating(0)
   end
 
   def groupByWeek
    @weeks = @content.group_by { |item| item[:expiration_date].cweek }
-   @weeks.keys
-
-   @week33 = @weeks[33]
-   @week34 = @weeks[34]
-   @week35 = @weeks[35]
-   @week36 = @weeks[36]
   end
 
   def filter
     @content = @all.clone
 
-    if @category_filter != "ALL"
+    if @category_filter != nil
       @content = @content.select { |cont| cont[:category] == @category_filter }
     end
-    groupByWeek
 
+    if @rating_filter != nil
+      @content = @content.select { |cont| cont[:rating] >= @rating_filter }
+    end
+
+    groupByWeek
   end
 
-  def filterSeries #example to test filter
-    @category_filter = "series"
+  def filterCategory (category)
+    @category_filter = category
+
+    filter
+  end
+
+  def filterByRating(rating)
+    @rating_filter = rating
+
+    filter
+  end
+
+  def resetFilters
+    @category_filter = nil
+    @rating_filter = nil
 
     filter
   end
 
 
   def show
-
     @service = FetchTitlesJson.new
 
     @content = @service.getContentDetails(params[:id])
-
   end
-
-  # def edit
-  # end
-
 end
