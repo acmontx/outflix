@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
   @category_filter = "ALL"
 
   def index
+    # @service = NetflixContentRepo.new
     @service = FetchTitlesJson.new
 
     country = current_user.country
@@ -53,6 +54,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    # @service = NetflixContentRepo.new
     @service = FetchTitlesJson.new
     @content = @service.getContentDetails(params[:id])
   end

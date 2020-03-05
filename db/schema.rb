@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_113709) do
+ActiveRecord::Schema.define(version: 2020_03_04_211219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 2020_03_04_113709) do
     t.jsonb "titles_api_result"
     t.jsonb "expiring_api_result"
     t.jsonb "countries_api_result"
+  end
+
+  create_table "netflix_api_calls", force: :cascade do |t|
+    t.jsonb "body"
+    t.string "query"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["query"], name: "index_netflix_api_calls_on_query", unique: true
   end
 
   create_table "notifications", force: :cascade do |t|

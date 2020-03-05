@@ -6,19 +6,18 @@
       </div>
     </div>
   </div>
-  <div class="row justify-content-center border rounded py-3 my-5">
-    <div class="col-12 col-lg-4">
+  <div class="row justify-content-center py-3 my-5">
+    <div class="col-12 col-lg-3">
       <div class="content_params-description m-2 p-2">
-
-        <!-- <div class="session-poster" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url(<%#= cont[:imdbid][:image_url] %>)"></div> -->
-        <%#= render '/shared/session-poster', session: @session %>
+        <img src="<%= @content[:image_url] %>" />
       </div>
     </div>
-    <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-7">
       <div class="p-4">
+        <h4><%= @content[:title] %></h4>
+        <p>Plot:</p>
+        <p><%= @content[:plot] %></p>
         <div class="">
-          <p>Plot:</p>
-          <p><%= @content[:plot] %></p>
         </div>
         <div class="mt-4">
           <%= link_to 'Share', '#', class:"btn btn-outline-dark", id:"share-btn" %>
