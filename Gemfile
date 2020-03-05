@@ -22,6 +22,8 @@ gem 'pg_search'
 gem 'pundit'
 gem 'rails-social-share-button'
 
+gem 'letter_opener', group: :development
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
