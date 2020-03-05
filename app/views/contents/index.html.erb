@@ -1,65 +1,25 @@
-
 <div class="dashboard-container">
 
-  <!-- <div class="dashboard-container col-12"> -->
 
+  <%= form_tag contents_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a movie"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <% @weeks.keys.each do |weekNumber| %>
     <div class="weekly-content">
-      <h3> WEEK 1 </h3>
+      <h3> <%= (Date.commercial(2017, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
+
       <div class="cards-container dashboard">
-        <% @weeks[33].each do |cont| %>
-        <div class="card-content dashboard">
-          <%= link_to content_path(cont[:imdbid]) do %>
-          <img src="<%= cont[:image_url] %>" />
-          <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %></p>
-            <% end %>
-          </div>
-        </div>
+        <% @weeks[weekNumber].each do |content| %>
+        <%= render '/shared/content_card', content: content %>
         <% end %>
-      </div>4
+      </div>
     </div>
-
-    <div class="weekly-content">
-    <h3> WEEK 2 </h3>
-      <div class="cards-container dashboard">
-        <% @week34.each do |cont| %>
-        <div class="card-content dashboard">
-          <img src="<%= cont[:image_url] %>" />
-          <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %></p>
-          </div>
-        </div>
-        <% end %>
-    </div>
-  </div>
-
-    <div class="weekly-content">
-    <h3> WEEK 3 </h3>
-    <div class="cards-container dashboard">
-        <% @week35.each do |cont| %>
-        <div class="card-content dashboard">
-          <img src="<%= cont[:image_url] %>" />
-          <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %> </p>
-          </div>
-        </div>
-        <% end %>
-    </div>
-    </div>
-
-    <div class="weekly-content">
-    <h3> WEEK 4 </h3>
-    <div class="cards-container dashboard">
-        <% @week36.each do |cont| %>
-        <div class="card-content dashboard">
-          <img src="<%= cont[:image_url] %>" />
-          <div class="card-content-info">
-            <p> <%= cont[:expiration_date] %> </p>
-          </div>
-        </div>
-        <% end %>
-    </div>
-    </div>
+  <% end %>
 
 </div>
-

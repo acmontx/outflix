@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   after_create :send_expiring_email
 
+  def downcase_country
+    self.country.downcase!
+  end
+
   private
 
   def send_expiring_email

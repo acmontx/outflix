@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_170352) do
+ActiveRecord::Schema.define(version: 2020_03_05_155210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,27 @@ ActiveRecord::Schema.define(version: 2020_03_02_170352) do
     t.string "title"
     t.string "category"
     t.string "genre"
-    t.string "netflixid"
+    t.string "netflix_id"
     t.string "image_url"
     t.string "plot"
     t.date "expiration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "runtime"
+    t.string "imdb_id"
+    t.float "imdb_rating"
+    t.jsonb "cast"
+    t.jsonb "details"
+    t.float "netflix_rating"
+    t.index ["netflix_id"], name: "index_contents_on_netflix_id"
+  end
+
+  create_table "netflix_api_calls", force: :cascade do |t|
+    t.jsonb "body"
+    t.string "query"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["query"], name: "index_netflix_api_calls_on_query", unique: true
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -59,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_02_170352) do
     t.string "first_name"
     t.string "last_name"
     t.string "country"
-    t.string "netflix_details"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
