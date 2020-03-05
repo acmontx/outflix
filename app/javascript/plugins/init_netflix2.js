@@ -40,9 +40,9 @@ var Netflix = require('netflix2')
 var netflix = new Netflix()
 
 var credentials = {
-  // email: 'vanessaesanto@gmail.com',
+  // email: 'vanessa@example.com',
   email: ,
-  // password: 'ifP4hkQ!vKmqCz!*jFvN'
+  // password: 'a_password'
   password: // grab from event listener
 }
 
