@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "www.yourdomain.com" }
+  config.action_mailer.default_url_options = { host: "www.outflix.rocks" }
   # or your custom domain name eg. "www.yourdomain.com"
 
   # Settings specified here will take precedence over those in config/application.rb.
