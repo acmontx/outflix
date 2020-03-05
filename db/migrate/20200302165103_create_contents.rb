@@ -4,7 +4,7 @@ class CreateContents < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :category
       t.string :genre
-      t.string :netflixid
+      t.string :netflix_id
       t.string :image_url
       t.string :plot
       t.date :expiration_date
