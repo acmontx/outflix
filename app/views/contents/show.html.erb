@@ -1,4 +1,31 @@
-<h1>Contents#show</h1>
-<p>Find me in app/views/contents/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center py-3 my-5">
+    <div class="col-12 col-lg-3">
+      <div class="content_params-description m-2 p-2">
+        <img src="<%= @content[:image_url] %>" />
+      </div>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="p-4">
+        <h4><%= @content[:title] %></h4>
+        <div class="d-flex justify-content-between pt-4">
+          <p>Category: <%= @content[:category] %></p>
+          <p>Released: <%= @content[:released] %></p>
+          <p>Runtime: <%= @content[:runtime] %></p>
+        </div>
+        <p class="pt-4">Plot:</p>
+        <p><%= @content[:plot] %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <%= link_to 'Go back', :back %>
+      <%= link_to 'Share', '#', class:"btn btn-outline-dark", id:"share-btn" %>
+    </div>
+  </div>
+</div>
+
+
 
 

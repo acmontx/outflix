@@ -2,12 +2,6 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     O U T F L I X
   <% end %>
-</div>
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    O U T F L I X
-  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -34,7 +28,7 @@
         </li>
       <% else %>
         <li class="nav-item active">
-          <%= link_to "Log In", new_user_session_path, class: "btn-signin" %>
+          <%= link_to "Log In", new_user_session_path, class: "btn-login" %>
         </li>
       <% end %>
     </ul>
