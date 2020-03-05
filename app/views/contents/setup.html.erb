@@ -1,3 +1,29 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>Import your 'My List' from your Netflix account </h3>
+      <p>DISCLAIMER: You'll need to enter your netflix email/password BUT we won't save these details.</p>
+      <div class="nf-list">
+        <div class="row justify-content-center">
+          <div class="new-form">
+            <%#= simple_form_for :nf do |f| %>
+
+            <div class="new-fields">
+              <%#= f.input :nf_email %>
+              <%#= f.input :nf_pass %>
+            </div>
+
+            <div class="new-button">
+              <%#= f.submit "Submit", id: 'browse-list', class: "btn btn-dark" %>
+            </div>
+            <%# end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <div class="container-setup">
   <div class="row">
     <div class="mx-auto" style="width: 500px;">
@@ -17,7 +43,6 @@
     <#%= simple_form_for @contents do |f| %>
     <%#= f.input :title, as: :autocomplete, source: autocomplete_contents_path %>
     <#% end %>
-
     -->
 
 
@@ -40,19 +65,10 @@
       <li><%#= contents.title %></li>
     <%# end %>
 </ul>
-
 -->
 </div>
-
-
-
 
 <div class="btnadd">
   <%= link_to "Add", "#", class: "btn btn-dark" %>
 </div>
 </div>
-
-
-
-<!--
--->

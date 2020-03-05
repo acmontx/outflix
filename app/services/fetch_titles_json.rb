@@ -30,6 +30,7 @@ class FetchTitlesJson
     return content
   end
 
+
   def getContentDetails(imdbid)
     jsonData = '{"poster":"","tomatoUserRating":"0","rated":"N/A","tomatoUserReviews":"0","filmid":"80212301","runtime":"N/A","top250tv":"0","imdbid":"tt7776244","metascore":"N/A","tomatoRating":"0","tomatoMeter":"0","released":"19 Dec 2017","top250":"0","imdbvotes":"5","imdbrating":"7.6","awards":"N/A","genre":"Reality-TV","tomatoConsensus":"N/A","plot":"N/A","type":"","localimage":"","tomatoFresh":"0","language":"Japanese","newid":"29898","tomatoUserMeter":"0","tomatoRotten":"0","tomatoReviews":"0","country":"Japan","date":"2018-03-14 04:00:09"}'
     result = JSON.parse(jsonData)
