@@ -16,7 +16,7 @@ class ContentsController < ApplicationController
     groupByWeek
 
     # filterCategory("movie")
-    filterByRating(0)
+    filterByRating(4)
   end
 
   def groupByWeek
@@ -37,7 +37,7 @@ class ContentsController < ApplicationController
     groupByWeek
   end
 
-  def filterCategory (category)
+  def filterCategory(category)
     @category_filter = category
 
     filter
@@ -74,4 +74,5 @@ class ContentsController < ApplicationController
     @service = FetchTitlesJson.new
     @content = @service.getContentDetails(params[:id])
   end
+end
 

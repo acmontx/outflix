@@ -1,6 +1,8 @@
 
 <div class="dashboard-container">
 
+   <button type="button" class="btn btn-outline-dark">MOVIE</button>
+
   <% @weeks.keys.each do |weekNumber| %>
     <div class="weekly-content">
       <h3> <%= (Date.commercial(2017, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
