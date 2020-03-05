@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def expiring
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'Welcome to Le Wagon')
+    mail(to: @user.email, subject: 'Expiring Netf..x Titles!')
     # This will render a view in `app/views/user_mailer`!
   end
 end

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   after_create :send_expiring_email
 
-  #private
+  private
 
   def send_expiring_email
     UserMailer.with(user: self).expiring.deliver_now
