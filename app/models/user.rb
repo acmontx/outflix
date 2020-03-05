@@ -8,9 +8,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   before_save :downcase_country
-  # netflix_details column is to delete
-
-  private
 
   def downcase_country
     self.country.downcase!

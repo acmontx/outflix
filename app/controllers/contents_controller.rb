@@ -6,15 +6,10 @@ class ContentsController < ApplicationController
   @rating_filter = nil
 
   def index
-    # @service = NetflixContentRepo.new
-
     # ------- FAKE JSON
     # @service = FetchTitlesJsonService.new
     # country = current_user.country    # "pt"
     # @content = @service.getExpiringContent(country)
-
-
-
 
     @contents = Content.all
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }
@@ -70,8 +65,6 @@ class ContentsController < ApplicationController
     filter
   end
 
-
-
   def setup
     # Fetch titles per country
     # @service = FetchTitles.new
@@ -83,12 +76,9 @@ class ContentsController < ApplicationController
     # @titles_list = @service.getTitlesPerCountry(country_code)
   end
 
-
   def show
-    # @service = NetflixContentRepo.new
     # @service = FetchTitlesJson.new
     # @content = @service.getContentDetails(params[:id])
-
     @content = Content.find(params[:id])
   end
 end
