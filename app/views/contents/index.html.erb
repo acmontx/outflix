@@ -1,18 +1,10 @@
 <div class="dashboard-container">
 
-
-  <%= form_tag contents_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a movie"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <button type="button" class="btn btn-outline-dark">MOVIE</button>
 
   <% @weeks.keys.each do |weekNumber| %>
     <div class="weekly-content">
-      <h3> <%= (Date.commercial(2017, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
+      <h3> <%= (Date.commercial(2020, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2020, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
 
       <div class="cards-container dashboard">
         <% @weeks[weekNumber].each do |content| %>
