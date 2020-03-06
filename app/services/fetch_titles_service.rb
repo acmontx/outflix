@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
+require 'byebug'
 
 class FetchTitlesService
   API_COUNTRIES = {
@@ -48,6 +49,7 @@ class FetchTitlesService
     # url = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=#{country_code}&t=ns&st=adv&p=1"
     # ONLY FOR GIVEN COUNTRY
     # result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1")
+
 
     expiring.body["ITEMS"].each do |item|
       imdb_id = item["imdbid"].strip
@@ -127,10 +129,11 @@ class FetchTitlesService
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
+    byebug
+
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
-
     response = http.request(request)
 
     body = response.read_body

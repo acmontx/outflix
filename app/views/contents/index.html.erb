@@ -1,16 +1,9 @@
 <div class="dashboard-container">
+    <%= link_to "All", {controller: "contents", action: "index"}, class:"btn btn-light mb-3"%>
+    <%= link_to "Movies", {controller: "contents", action: "index", category: 'movie' }, class:"btn btn-light mb-3"%>
+    <%= link_to "Series", {controller: "contents", action: "index", category: 'series' }, class:"btn btn-light mb-3"%>
 
-<button type="button" class="btn btn-outline-dark">MOVIE</button>
-
-<div class="weekly-content">
-  <% @weeks.each do |content_by_week| %>
-    <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>
-
-    <div class="cards-container dashboard">
-      <% content_by_week[1].each do |content| %>
-        <%= render '/shared/content_card', content: content %>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render '/shared/weeks_content', weeks: @weeks %>
   </div>
 </div>
+

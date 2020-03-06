@@ -22,10 +22,18 @@
   flex-grow: 1;
 }
 
-.title_description a {
-  color: #f8f9fa;
+a {
+  color: black;
   &:hover {
-    color: #f0c7ea;
+    color: #505050;
+    text-decoration: none;
+  }
+}
+
+.title_description a {
+  color: #F8F9FA;
+  &:hover {
+    color: #F0C7EA;
     text-decoration: none;
   }
 }
