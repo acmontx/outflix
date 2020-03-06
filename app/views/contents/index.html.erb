@@ -1,17 +1,15 @@
-<div class="dashboard-background" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80);">
-  <div class="dashboard-container">
+<div class="dashboard-container">
 
-  <button type="button" class="btn btn-outline-dark">MOVIE</button>
+<button type="button" class="btn btn-outline-dark">MOVIE</button>
 
-  <% @weeks.each do |content_by_week| %>
-    <div class="weekly-content">
-      <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>
+<% @weeks.each do |content_by_week| %>
+  <div class="weekly-content">
+    <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>
 
-      <div class="cards-container dashboard">
-        <% content_by_week[1].each do |content| %>
-          <%= render '/shared/content_card', content: content %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+    <div class="cards-container dashboard">
+      <% content_by_week[1].each do |content| %>
+        <%= render '/shared/content_card', content: content %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
