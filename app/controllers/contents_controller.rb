@@ -24,7 +24,6 @@ class ContentsController < ApplicationController
     country = current_user.country
     # @service.getExpiringContent(country)
 
-
     # @all = @content.clone
 
     #groupByWeek
