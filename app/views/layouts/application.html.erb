@@ -11,15 +11,15 @@
   </head>
   <body>
     <div class="page-container">
-      <div class="content-wrap">
+      <div class="content-wrap background" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80);">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
         <%= yield %>
+      </div>
         <%= render '/shared/footer' %>
         <%= javascript_include_tag 'application' %>
 
         <%= javascript_pack_tag 'application' %>
-      </div>
     </div>
   </body>
 </html>

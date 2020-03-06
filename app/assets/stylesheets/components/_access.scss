@@ -9,14 +9,20 @@
   padding: 40px;
   border-radius: 15px;
   width: 450px;
-  margin: 25px auto;
+  margin: 42px auto;
   background-color: white;
 }
 
-h1 {
+h2 {
   font-family: Oswald, sans-serif;
   font-weight: lighter;
   font-size: 26px;
   text-align: center;
   padding-bottom: 20px;
+}
+
+.access-button {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
