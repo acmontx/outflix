@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
+  before_save :downcase_country
   after_create :send_expiring_email
 
   def downcase_country

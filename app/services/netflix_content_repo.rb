@@ -5,29 +5,41 @@ require 'openssl'
 class NetflixContentRepo
   API_URL = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi"
 
-  def all_expiring(country_code)
-    query = build_query(country_code)
+  def all_expiring(country_code, refresh: false)
+    query = build_all_expiring_query(country_code)
+    ensure_call(query, refresh)
+  end
+
+  def load_title(imdb_id, refresh: false)
+    query = build_load_title_query(imdb_id)
+    ensure_call(query, refresh)
+  end
+
+  private
+
+  def ensure_call(query, refresh = false)
     cached = NetflixApiCall.find_by(query: query)
 
     if cached.present?
-      return refresh(cached) if cached.stale?
+      return refresh(cached) if refresh || cached.stale?
       cached
     else
       refresh(NetflixApiCall.create!(query: query))
     end
   end
 
-  private
-
   def refresh(call)
-    puts "refreshing"
     call.body = fetch(call.query)
     call.save!
     call
   end
 
-  def build_query(country_code)
+  def build_all_expiring_query(country_code)
     "q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1"
+  end
+
+  def build_load_title_query(imdb_id)
+    "t=loadvideo&q=#{imdb_id}"
   end
 
   def fetch(query)
