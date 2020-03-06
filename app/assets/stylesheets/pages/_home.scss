@@ -1,37 +1,34 @@
 // Specific CSS for your home-page
-.background {
-  background-size: cover;
-  background-position: center;
-  font-family: Oswald, sans-serif;
-}
-
-.intro-container {
+.hp-intro-container {
   display: flex;
   justify-content: center;
 }
 
-.illustration {
+.hp-illustration {
   width: 30%;
   display: flex;
   justify-content: space-around;
 }
 
-.illustration img {
+.hp-illustration img {
   height: 450px;
 }
 
-.intro {
-  width: 37%;
+.hp-intro {
+  width: 38%;
   height: 350px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
 }
 
-.intro h2 {
+.hp-intro h2 {
   color: white;
+  font-size: 35px;
   font-family: Lato, sans-serif;
   line-height: 1.5;
+  text-align: left;
 }
 
 .signup-container-one {
@@ -46,6 +43,7 @@
   justify-content: center;
   list-style: none;
   padding-top: 25px;
+  margin-bottom: 30px;
 }
 
 .btn-signup {
@@ -107,7 +105,7 @@
 .hp-cards-info {
   font-family: Lato, sans-serif;
   font-weight: lighter;
-  font-size: 25px;
+  font-size: 24px;
   color: black;
 }
 
