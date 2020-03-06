@@ -1,5 +1,4 @@
 require 'date'
-require 'byebug'
 
 class ContentsController < ApplicationController
 
