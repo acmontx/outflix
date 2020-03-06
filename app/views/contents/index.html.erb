@@ -1,5 +1,6 @@
 <div class="dashboard-container">
   <button type="button" class="btn btn-outline-dark">MOVIE</button>
+
   <div class="weekly-content">
     <% @weeks.each do |content_by_week| %>
       <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>

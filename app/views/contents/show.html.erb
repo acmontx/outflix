@@ -10,8 +10,8 @@
         <h4 class="font-italic"><%= @content[:title] %></h4>
         <div class="d-flex justify-content-between pt-4">
           <p>Category: <%= @content[:category] %></p>
-          <p>Released: <%= @content[:released] %></p>
-          <p>Runtime: <%= @content[:runtime] %></p>
+          <p>Genre: <%= @content[:genre] %></p>
+          <p>Runtime: <%= @content[:runtime] if @content[:runtime].present? %></p>
         </div>
         <p class="pt-4">Plot:</p>
         <p><%= @content[:plot] %></p>
@@ -25,7 +25,4 @@
     </div>
   </div>
 </div>
-
-
-
 
