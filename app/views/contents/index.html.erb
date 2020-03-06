@@ -10,13 +10,13 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <% @weeks.keys.each do |weekNumber| %>
+  <% @weeks.each do |content_by_week| %>
     <div class="weekly-content">
-      <h3> <%= (Date.commercial(2017, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
+      <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>
 
       <div class="cards-container dashboard">
-        <% @weeks[weekNumber].each do |content| %>
-        <%= render '/shared/content_card', content: content %>
+        <% content_by_week[1].each do |content| %>
+          <%= render '/shared/content_card', content: content %>
         <% end %>
       </div>
     </div>

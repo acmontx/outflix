@@ -11,14 +11,12 @@ class ContentsController < ApplicationController
     # country = current_user.country    # "pt"
     # @content = @service.getExpiringContent(country)
 
-    @contents = Content.all
-    @weeks = @contents.group_by { |content| content.expiration_date.cweek }
 
     # 4 real JSON
     @service = FetchTitlesService.new
-    country = current_user.country
-    @service.getExpiringContent(country)
-
+    @service.get_expiring_content(current_user.country)
+    @contents = Content.where(country_code: current_user.country)
+    @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
 
     # @all = @content.clone
 
