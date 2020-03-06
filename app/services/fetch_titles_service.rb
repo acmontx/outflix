@@ -107,9 +107,9 @@ class FetchTitlesService
 
           break if country_code.nil?
 
-          expiring = repo.all_expiring(country_code)
+          expiring = repo.all_expiring(country_code, refresh: true)
           expiring.body["ITEMS"].reject { |i| i["imdbid"] == "notfound" }.each do |item|
-            repo.load_title(item["imdbid"].strip)
+            repo.load_title(item["imdbid"].strip, refresh: true)
           end
         end
       end
