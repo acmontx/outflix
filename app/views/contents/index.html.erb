@@ -3,8 +3,8 @@
 
   <button type="button" class="btn btn-outline-dark">MOVIE</button>
 
-  <% @weeks.each do |content_by_week| %>
-    <div class="weekly-content">
+  <div class="weekly-content">
+    <% @weeks.each do |content_by_week| %>
       <h3> <%= (Date.commercial(2017, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, content_by_week[0]) + 7).strftime("%A, %b %d"))%> </h3>
 
       <div class="cards-container dashboard">
