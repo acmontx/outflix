@@ -2,16 +2,9 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
+
 class FetchTitlesService
   # Check if titles are already in th DB or fetch the titles
-
-
-
-
-# This is the code to use with the API. It's commented out because I'm using
-# the other file to use with json and not use the API
-# If you uncomment this code and change the method names on the controller,
-# you can use the API, but please change the x-rapidapi-key.
 
   def getCountries
     result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=lc&q=available")
@@ -25,7 +18,7 @@ class FetchTitlesService
 
   def getExpiringContent(countryCode)
     if countryCode.empty?
-      countryCode = 'PT' # if country is nil assume 'PT' but should be a different msg?
+      countryCode = 'PT'
     end
 
     # ALL THE MOVIES FROM ALL THE COUNTRIES
@@ -73,25 +66,26 @@ class FetchTitlesService
       }
 
       attributes = expiring_on_netflix.merge(imdb_details)
+
       Content.where(netflix_id: netflix_id).first_or_create(attributes)
     end
 
   end
 
-  def getTitlesPerCountry(countryId)
-    result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
-    p result
-    content = result["ITEMS"].map { |item|
-      {
-        netflixid: item["netflixid"],
-        title: item["title"],
-        image_url: item["image"],
-        plot: item["synopsis"].split('<br>')[0],
-        category: item["type"]
-      }
-    }
-    return content
-  end
+  # def getTitlesPerCountry(countryId)
+  #   result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
+  #   p result
+  #   content = result["ITEMS"].map { |item|
+  #     {
+  #       netflixid: item["netflixid"],
+  #       title: item["title"],
+  #       image_url: item["image"],
+  #       plot: item["synopsis"].split('<br>')[0],
+  #       category: item["type"]
+  #     }
+  #   }
+  #   return content
+  # end
 
   private
 

@@ -1,4 +1,5 @@
 require 'date'
+require 'byebug'
 
 class ContentsController < ApplicationController
 
@@ -19,38 +20,41 @@ class ContentsController < ApplicationController
     @contents = Content.all
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }
 
+
     # 4 real JSON
     @service = FetchTitlesService.new
     country = current_user.country
     # @service.getExpiringContent(country)
 
-    # @all = @content.clone
+    @all = @content.clone
 
-    #groupByWeek
+    # groupByWeek
 
     # filterCategory("movie")
-    # filterByRating(0)
+    # filterByRating(4)
+
   end
 
   def groupByWeek
-    @weeks = @content.group_by { |item| item[:expiration_date].cweek }
+    @weeks = @contents.group_by { |item| item[:expiration_date].cweek }
+
   end
 
   def filter
     @content = @all.clone
 
     if @category_filter != nil
-      @content = @content.select { |cont| cont[:category] == @category_filter }
+      @content = @contents.select { |content| content[:category] == @category_filter }
     end
 
     if @rating_filter != nil
-      @content = @content.select { |cont| cont[:rating] >= @rating_filter }
+      @content = @contents.select { |content| content[:netflix_rating] >= @rating_filter }
     end
 
     groupByWeek
   end
 
-  def filterCategory (category)
+  def filterCategory(category)
     @category_filter = category
 
     filter
@@ -84,11 +88,6 @@ class ContentsController < ApplicationController
 
 
   def show
-    # @service = NetflixContentRepo.new
-    # @service = FetchTitlesJson.new
-    # @content = @service.getContentDetails(params[:id])
-
-
     @content = Content.find(params[:id])
   end
 end
