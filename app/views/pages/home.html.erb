@@ -1,51 +1,50 @@
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80);">
-  <div class="intro-container">
-    <div class="illustration">
-      <%= image_tag "undraw_star_wars.svg", alt: "star wars" %>
-    </div>
-    <div class="intro">
-      <h2>Never miss out on the chance to watch a Netflix title before it leaves the platform ever again</h2>
-    </div>
+<div class="intro-container">
+  <div class="illustration">
+    <%= image_tag "undraw_star_wars.svg", alt: "star wars" %>
   </div>
-
-  <div class="signup-container-one">
-    <li>
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
-    </li>
-  </div>
-  <li class="signup-info" align="center">
-    It's free!
-  </li>
-
-  <div class="hp-cards-container">
-    <div class="hp-cards-banner"></div>
-    <div class="hp-cards">
-      <div class="hp-card-one"></div>
-      <div class="hp-cards-info-container-one">
-        <p class="hp-cards-info-one">
-          Get access to a calendar display with the deadlines for each soon-to-be-removed title
-        </p>
-      </div>
-    </div>
-
-    <div class="hp-cards-banner"></div>
-    <div class="hp-cards">
-      <div class="hp-cards-info-container-two">
-        <p class="hp-cards-info-two">
-          Get notified whenever Netflix assigns an Available until… date on a title you have in your ‘My List’
-        </p>
-      </div>
-      <div class="hp-card-two"></div>
-    </div>
-  </div>
-
-  <li class="signup-extra" align="center">
-    Sign up now to see what content is leaving Netflix soon!
-  </li>
-
-  <div class="signup-container-two">
-    <li>
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
-    </li>
+  <div class="intro">
+    <h2>Never miss out on the chance to watch a Netflix title before it leaves the platform ever again</h2>
   </div>
 </div>
+
+<div class="signup-container-one">
+  <li>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
+  </li>
+</div>
+<li class="signup-info" align="center">
+  It's free!
+</li>
+
+<div class="hp-cards-container">
+  <div class="hp-cards-banner"></div>
+  <div class="hp-cards">
+    <div class="hp-card"></div>
+    <div class="hp-cards-info-container-one">
+      <p class="hp-cards-info">
+        Get access to a calendar display with the deadlines for each soon-to-be-removed title
+      </p>
+    </div>
+  </div>
+
+  <div class="hp-cards-banner"></div>
+  <div class="hp-cards">
+    <div class="hp-cards-info-container-two">
+      <p class="hp-cards-info hp-info-two">
+        Get notified whenever Netflix assigns an Available until… date on a title you have in your ‘My List’
+      </p>
+    </div>
+    <div class="hp-card hp-card-two"></div>
+  </div>
+</div>
+
+<li class="signup-extra" align="center">
+  Sign up now to see what content is leaving Netflix soon!
+</li>
+
+<div class="signup-container-two">
+  <li>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn-signup" %>
+  </li>
+</div>
+
