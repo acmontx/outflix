@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
+gem 'letter_opener', group: :development
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -21,6 +23,7 @@ gem 'nokogiri'
 gem 'pg_search'
 gem 'pundit'
 gem 'rails-social-share-button'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

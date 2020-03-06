@@ -96,10 +96,8 @@ class FetchTitlesService
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = 'b719473d32msh887dc3ee40f527ap1a89ebjsn7af94eb012d8'
+    request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
 
-    # NOT WORKING ON .env
-    # request["x-rapidapi-key"] = ENV['X-RAPIDAPI-KEY']
     response = http.request(request)
 
     body = response.read_body
