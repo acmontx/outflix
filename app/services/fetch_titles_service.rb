@@ -5,14 +5,6 @@ require 'openssl'
 class FetchTitlesService
   # Check if titles are already in th DB or fetch the titles
 
-
-
-
-# This is the code to use with the API. It's commented out because I'm using
-# the other file to use with json and not use the API
-# If you uncomment this code and change the method names on the controller,
-# you can use the API, but please change the x-rapidapi-key.
-
   def getCountries
     result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=lc&q=available")
     # result["ITEMS"][0][0] = 268 - country id
@@ -25,7 +17,7 @@ class FetchTitlesService
 
   def getExpiringContent(countryCode)
     if countryCode.empty?
-      countryCode = 'PT' # if country is nil assume 'PT' but should be a different msg?
+      countryCode = 'PT'
     end
 
     # ALL THE MOVIES FROM ALL THE COUNTRIES
