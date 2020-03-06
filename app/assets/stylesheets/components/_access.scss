@@ -23,6 +23,13 @@ h2 {
 
 .access-button {
   display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.access-links {
+  display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  position: relative;
 }

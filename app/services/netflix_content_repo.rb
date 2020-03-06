@@ -54,7 +54,7 @@ class NetflixContentRepo
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
+    request["x-rapidapi-key"] = 'b719473d32msh887dc3ee40f527ap1a89ebjsn7af94eb012d8'
 
     response = http.request(request)
 
