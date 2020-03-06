@@ -22,7 +22,7 @@ class ContentsController < ApplicationController
     # 4 real JSON
     @service = FetchTitlesService.new
     country = current_user.country
-    #@service.getExpiringContent(country)
+    # @service.getExpiringContent(country)
 
 
     # @all = @content.clone
