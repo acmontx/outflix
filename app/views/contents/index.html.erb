@@ -1,14 +1,6 @@
 <div class="dashboard-container">
 
-
-  <%= form_tag contents_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a movie"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <button type="button" class="btn btn-outline-dark">MOVIE</button>
 
   <% @weeks.each do |content_by_week| %>
     <div class="weekly-content">

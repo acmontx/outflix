@@ -40,29 +40,14 @@ class FetchTitlesService
     "78"=>{:code=>"us", :name=>"United States"}
   }
 
-  # Check if titles are already in th DB or fetch the titles
-
-  # def getCountries
-    # result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=lc&q=available")
-    # result["ITEMS"][0][0] = 268 - country id
-    # result["ITEMS"][0][1] = pt - country code
-    # result["ITEMS"][0][2] = Portugal - country name
-    # countries = result["ITEMS"].map { |item| { code: item[1], name: item[2] } }
-  #   countries  = result["ITEMS"].map { |item| { item[1] => item[0] } }
-  #   countries
-  # end
-
   def get_expiring_content(country_code = 'pt')
     repo = NetflixContentRepo.new
 
+    expiring = repo.all_expiring(country_code)
     # ALL THE MOVIES FROM ALL THE COUNTRIES
     # url = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=#{country_code}&t=ns&st=adv&p=1"
-
+    # ONLY FOR GIVEN COUNTRY
     # result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1")
-
-    expiring = repo.all_expiring(country_code)
-
-    # { "COUNT":"14","ITEMS":[ {"netflixid":"80087352","title":"Same Kind of Different as Me","image":"https://occ-2S-HnHH ....
 
     expiring.body["ITEMS"].each do |item|
       imdb_id = item["imdbid"].strip
@@ -85,16 +70,6 @@ class FetchTitlesService
       if imdb_id != "notfound"
         movie = repo.load_title(imdb_id)
 
-        # {
-        # "RESULT": {
-        #     "nfinfo": {
-        #         "image1": "https://occ-0-2794-2218.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABWxskqiZlsP9QL-sz2oW2l2hyngU6PQYwkJMpDfRqQeDYZelZvxqcE5lMQX4qr6FqSXfcE6c2wltSNnrkJRcj3sSXJ66.jpg?r=863",
-        #         ...
-        #      },
-        #     "imdbinfo": {
-        #.       "genre": ...
-        #     },
-        #.    "people": { ... }
         imdb_details = {
           genre: movie.body["RESULT"]["imdbinfo"]["genre"],
           imdb_rating: movie.body["RESULT"]["imdbinfo"]["rating"].to_f,
@@ -142,21 +117,6 @@ class FetchTitlesService
 
     country_threads.each(&:join)
   end
-
-  # def getTitlesPerCountry(countryId)
-  #   result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
-  #   p result
-  #   content = result["ITEMS"].map { |item|
-  #     {
-  #       netflixid: item["netflixid"],
-  #       title: item["title"],
-  #       image_url: item["image"],
-  #       plot: item["synopsis"].split('<br>')[0],
-  #       category: item["type"]
-  #     }
-  #   }
-  #   return content
-  # end
 
   private
 
