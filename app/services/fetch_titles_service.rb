@@ -1,7 +1,6 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
-require 'byebug'
 
 class FetchTitlesService
   API_COUNTRIES = {
@@ -128,8 +127,6 @@ class FetchTitlesService
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    byebug
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'

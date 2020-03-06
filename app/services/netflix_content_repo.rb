@@ -1,7 +1,6 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
-require 'byebug'
 
 class NetflixContentRepo
   API_URL = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi"
@@ -45,7 +44,6 @@ class NetflixContentRepo
   end
 
   def fetch(query)
-    byebug
     url = URI(API_URL + "?#{query}")
 
     http = Net::HTTP.new(url.host, url.port)
