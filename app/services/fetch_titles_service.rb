@@ -2,6 +2,7 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 
+
 class FetchTitlesService
   # Check if titles are already in th DB or fetch the titles
 
@@ -65,25 +66,26 @@ class FetchTitlesService
       }
 
       attributes = expiring_on_netflix.merge(imdb_details)
+
       Content.where(netflix_id: netflix_id).first_or_create(attributes)
     end
 
   end
 
-  def getTitlesPerCountry(countryId)
-    result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
-    p result
-    content = result["ITEMS"].map { |item|
-      {
-        netflixid: item["netflixid"],
-        title: item["title"],
-        image_url: item["image"],
-        plot: item["synopsis"].split('<br>')[0],
-        category: item["type"]
-      }
-    }
-    return content
-  end
+  # def getTitlesPerCountry(countryId)
+  #   result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=''-!1900%2C2100-!0%2C5-!0%2C10-!0-!Any-!Any-!Any-!gt0-!%7Bdownloadable%7D&t=ns&cl=#{countryId}&st=adv&ob=Relevance&p=1&sa=or")
+  #   p result
+  #   content = result["ITEMS"].map { |item|
+  #     {
+  #       netflixid: item["netflixid"],
+  #       title: item["title"],
+  #       image_url: item["image"],
+  #       plot: item["synopsis"].split('<br>')[0],
+  #       category: item["type"]
+  #     }
+  #   }
+  #   return content
+  # end
 
   private
 
@@ -96,7 +98,7 @@ class FetchTitlesService
 
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
+    request["x-rapidapi-key"] = 'b719473d32msh887dc3ee40f527ap1a89ebjsn7af94eb012d8'
 
     response = http.request(request)
 

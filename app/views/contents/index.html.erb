@@ -4,7 +4,7 @@
 
   <% @weeks.keys.each do |weekNumber| %>
     <div class="weekly-content">
-      <h3> <%= (Date.commercial(2017, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2017, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
+      <h3> <%= (Date.commercial(2020, weekNumber).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2020, weekNumber) + 7).strftime("%A, %b %d"))%> </h3>
 
       <div class="cards-container dashboard">
         <% @weeks[weekNumber].each do |content| %>

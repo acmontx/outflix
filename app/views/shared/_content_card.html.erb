@@ -2,7 +2,7 @@
   <%= link_to content_path(content) do %>
   <img src="<%= content.image_url %>" />
   <div class="card-content-info">
-    <p> <%= content.expiration_date %></p>
+    <p> <%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
   <% end %>
   </div>
 </div>
