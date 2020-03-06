@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_155210) do
+ActiveRecord::Schema.define(version: 2020_03_05_233907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_03_05_155210) do
     t.jsonb "cast"
     t.jsonb "details"
     t.float "netflix_rating"
+    t.string "country_code"
+    t.index ["country_code", "netflix_id"], name: "index_contents_on_country_code_and_netflix_id", unique: true
     t.index ["netflix_id"], name: "index_contents_on_netflix_id"
   end
 
