@@ -21,3 +21,11 @@
 .content-wrap {
   flex-grow: 1;
 }
+
+.title_description a {
+  color: #f8f9fa;
+  &:hover {
+    color: #f0c7ea;
+    text-decoration: none;
+  }
+}
