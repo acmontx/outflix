@@ -13,12 +13,11 @@
 @import "pages/index";
 
 .page-container {
-  // position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 .content-wrap {
   flex-grow: 1;
 }
-
