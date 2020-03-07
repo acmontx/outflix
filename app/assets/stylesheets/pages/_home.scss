@@ -1,37 +1,34 @@
 // Specific CSS for your home-page
-.background {
-  background-size: cover;
-  background-position: center;
-  font-family: Oswald, sans-serif;
-}
-
-.intro-container {
+.hp-intro-container {
   display: flex;
   justify-content: center;
 }
 
-.illustration {
+.hp-illustration {
   width: 30%;
   display: flex;
   justify-content: space-around;
 }
 
-.illustration img {
+.hp-illustration img {
   height: 450px;
 }
 
-.intro {
-  width: 37%;
+.hp-intro {
+  width: 38%;
   height: 350px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
 }
 
-.intro h2 {
+.hp-intro h2 {
   color: white;
+  font-size: 35px;
   font-family: Lato, sans-serif;
   line-height: 1.5;
+  text-align: left;
 }
 
 .signup-container-one {
@@ -45,7 +42,7 @@
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 50px;
+  padding: 25px 0 50px;
 }
 
 .btn-signup {
@@ -107,7 +104,7 @@
 .hp-cards-info {
   font-family: Lato, sans-serif;
   font-weight: lighter;
-  font-size: 25px;
+  font-size: 23px;
   color: black;
 }
 
@@ -228,7 +225,7 @@
   border-radius: 5px;
   background-color: deeppink;
   position: absolute;
-  top: 200px;
+  top: 270px;
   right: 450px;
   animation: twinkle 0.5s 0.3s linear infinite alternate;
 }
@@ -274,7 +271,7 @@
   border-radius: 5px;
   background-color: deeppink;
   position: absolute;
-  top: 290px;
+  top: 180px;
   right: 620px;
   animation: twinkle 0.5s 0.3s linear infinite alternate;
 }
@@ -297,8 +294,8 @@
   border-radius: 5px;
   background-color: deeppink;
   position: absolute;
-  top: 333px;
-  left: 180px;
+  top: 323px;
+  left: 120px;
   animation: twinkle 0.5s 0.3s linear infinite alternate;
 }
 

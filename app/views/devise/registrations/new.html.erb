@@ -1,32 +1,27 @@
-<div class="container-access">
+<!-- <div class="access-background" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80);"> -->
+<div class="container-access" onclick="onclick">
   <h2>SIGN UP</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
-    <div class="form-inputs">
+    <div class="form-access">
       <%= f.input :first_name,
-                  placeholder: "First Name",
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "first_name" }%>
       <%= f.input :last_name,
-                  placeholder: "Last Name",
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "last_name" }%>
       <%= f.input :email,
-                  placeholder: "Email",
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
       <%= f.input :password,
-                  placeholder: "••••••",
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :password_confirmation,
-                  placeholder: "••••••",
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :country,
@@ -34,8 +29,9 @@
                   input_html: { autocomplete: "country" } %>
     </div>
 
-    <div class="access-button">
+    <div class="access-button mt-4">
       <%= f.submit "Sign Up", class: "btn btn-dark" %>
     </div>
   <% end %>
+
 </div>

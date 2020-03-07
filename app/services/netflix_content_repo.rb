@@ -5,6 +5,7 @@ require 'openssl'
 class NetflixContentRepo
   API_URL = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi"
 
+
   def all_expiring(country_code, refresh: false)
     query = build_all_expiring_query(country_code)
     ensure_call(query, refresh)

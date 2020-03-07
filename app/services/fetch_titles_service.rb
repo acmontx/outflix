@@ -49,6 +49,7 @@ class FetchTitlesService
     # ONLY FOR GIVEN COUNTRY
     # result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1")
 
+
     expiring.body["ITEMS"].each do |item|
       imdb_id = item["imdbid"].strip
       netflix_id = item["netflixid"].strip
@@ -130,7 +131,6 @@ class FetchTitlesService
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
-
     response = http.request(request)
 
     body = response.read_body

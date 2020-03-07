@@ -9,7 +9,7 @@
   padding: 40px;
   border-radius: 15px;
   width: 450px;
-  margin: 42px auto;
+  margin: 20px auto;
   background-color: white;
 }
 
@@ -23,6 +23,13 @@ h2 {
 
 .access-button {
   display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.access-links {
+  display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  position: relative;
 }

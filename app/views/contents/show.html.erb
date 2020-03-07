@@ -1,21 +1,42 @@
 <div class="container title_description text-light">
-  <div class="row justify-content-center py-3 my-5">
+  <div class="row justify-content-center py-3 mt-5">
     <div class="col-12 col-lg-3">
-      <div class="m-2 p-2">
-        <img src="<%= @content[:image_url] %>" />
+      <div class="m-2 p-2 text-center">
+        <img src="<%= @content.image_url %>" />
+        <p class="pt-2 expiration-highlight">Expires on: <%= @content.expiration_date %></p>
       </div>
     </div>
     <div class="col-12 col-lg-7">
-      <div class="p-4">
-        <h4 class="font-italic"><%= @content[:title] %></h4>
-        <div class="d-flex justify-content-between pt-4">
-          <p>Category: <%= @content[:category] %></p>
-          <p>Genre: <%= @content[:genre] %></p>
-          <p>Runtime: <%= @content[:runtime] if @content[:runtime].present? %></p>
+      <div class="p-lg-4">
+        <h4 class="font-italic"><%= @content.title %></h4>
+        <div class="d-flex">
+          <div class="d-flex align-items-center">
+            <%= image_tag "IMDb-icon.png", alt: "imdb logo" %>
+            <p class="mb-0 pl-2"><%= @content.imdb_rating %></p>
+          </div>
+          <div class="ml-4 d-flex align-items-center">
+            <%= image_tag "netflix-icon.png", alt: "netflix logo" %>
+            <p class="mb-0 pl-2"><%= @content.netflix_rating %></p>
+          </div>
         </div>
-        <p class="pt-4">Plot:</p>
-        <p><%= @content[:plot] %></p>
+        <div class="d-flex justify-content-between pt-4">
+          <% if @content.category.present? %>
+            <p>Category: <%= @content.category %></p>
+          <% end %>
+          <% if @content.genre.present? %>
+            <p>Genre: <%= @content.genre %></p>
+          <% end %>
+          <% if @content.runtime.present? %>
+            <p>Runtime: <%= @content.runtime %></p>
+          <% end %>
+        </div>
+        <p class="pt-4"><%=h @content.plot.gsub(/&amp;#39;/, "'") %></p>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-10 offset-lg-1">
+      <h2 class="text-left ml-lg-5 border-bottom border-light pb-1">Cast & Crew</h2>
     </div>
   </div>
   <div class="row justify-content-center py-3 my-5">
@@ -25,7 +46,4 @@
     </div>
   </div>
 </div>
-
-
-
 
