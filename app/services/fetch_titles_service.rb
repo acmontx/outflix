@@ -40,6 +40,14 @@ class FetchTitlesService
     "78"=>{:code=>"us", :name=>"United States"}
   }
 
+  # Changes the API_COUNTRIES constant to match the simple form required
+  # format
+  def user_countries
+    FetchTitlesService::API_COUNTRIES.values.inject([]) do |acc, country|
+      acc << [country[:code], country[:name]]
+    end
+  end
+
   def get_expiring_content(country_code = 'pt')
     repo = NetflixContentRepo.new
 

@@ -23,4 +23,19 @@
   transform-origin: left bottom;
 }
 
+.show-icon {
+  font-size: 22px;
+}
+
+.rails-social-share-button .ssb-icon {
+  background-size: 40px 40px !important;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.rails-social-share-button {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
 
