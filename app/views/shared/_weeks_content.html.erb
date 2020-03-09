@@ -1,6 +1,7 @@
+<h2> Hurry up! These will be leaving Netflix soon! </h2>
 <% weeks.each do |content_by_week| %>
   <div class="weekly-content">
-    <h3> <%= (Date.commercial(2020, content_by_week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2020, content_by_week[0]) + 6).strftime("%A, %b %d"))%> </h3>
+    <h3> <%= (Date.commercial(2020, content_by_week[0]).strftime("%A, %d/%m"))%> - <%= ((Date.commercial(2020, content_by_week[0]) + 6).strftime("%A, %d/%m"))%> </h3>
 
     <div class="cards-container dashboard">
       <% content_by_week[1].each do |content| %>

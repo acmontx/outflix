@@ -10,6 +10,9 @@ class ContentsController < ApplicationController
     filter_content
 
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
+
+    @params = params.permit(:category, :imdb_rating, :genre)
+    @genres = ["Action", "Animation", "Crime", "Comedy", "Documentary", "Drama", "Horror", "Romance", "Sci-Fi", "War" ]
   end
 
   def filter_content
@@ -31,3 +34,4 @@ class ContentsController < ApplicationController
   end
 
 end
+
