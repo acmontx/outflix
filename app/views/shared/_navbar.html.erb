@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    O U T F L I X
+    <%= image_tag "outflix_logo.png", alt: "outflix logo" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,14 +10,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "Dashboard", contents_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Notifications", '#', class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://cdn4.iconfinder.com/data/icons/audio-and-video/512/movie_clapboard_cinema_clapper_studio_equipment_flat_icon_symbol-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%# if policy(Session).create? %>
               <%#= link_to "Create session", new_session_path, class: "dropdown-item" %>

@@ -3,4 +3,5 @@ class Content < ApplicationRecord
 
   # serialize :details, JSON
   # serialize :cast, Array
+
 end

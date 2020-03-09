@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  social_share_button:
+    share_to: "Share to %{name}"
+    telegram: "Telegram"
+    whatsapp_web: "WhatsApp"
+    twitter: "Twitter"

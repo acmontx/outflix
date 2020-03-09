@@ -1,7 +1,7 @@
 .navbar-lewagon {
   padding: 0px 16px 0px;
   justify-content: space-between;
-  background: linear-gradient(to bottom right, #180D33, #1C0D31);
+  background: linear-gradient(to right, #160D39, #221037);
   font-family: Oswald, sans-serif;
 }
 
@@ -9,16 +9,9 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand {
-  font-family: Six Caps, sans-serif;
-  font-size: 60px;
-  color: white;
-  text-shadow: 3px 3px #8928BA;
-  padding-left: 20px;
-}
-
-.navbar-lewagon .navbar-brand:hover {
-  color: white;
+.navbar-lewagon .navbar-brand img {
+  margin: 15px 15px;
+  height: 75px;
 }
 
 .main-name {
@@ -40,10 +33,14 @@
   cursor: pointer;
 }
 
+.navbar .nav-link {
+  color: white;
+}
+
 .btn-login {
   color: white;
   padding: 8px 18px;
-  border: 1px solid #1C0D31;
+  border: 1px solid #211038;
   font-size: 18px;
 }
 
@@ -52,4 +49,10 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
   text-decoration: none;
+}
+
+.avatar {
+  margin-right: 15px;
+  height: 45px;
+  width: 45px;
 }

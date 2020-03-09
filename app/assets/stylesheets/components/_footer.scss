@@ -3,13 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  padding: 0px 50px;
-  background: linear-gradient(to right, #732E82, #95367F);
+  height: 100px;
+  padding: 30px 45px 0 35px;
+  background: linear-gradient(to right, #782F84, #973781);
   color: rgba(255, 255, 255, 0.75);
   font-family: Oswald, sans-serif;
-  // position: absolute;
-  // margin-bottom: 0px;
+  flex-shrink: 0;
   width: 100%;
 }
 

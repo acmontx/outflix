@@ -40,18 +40,30 @@ class FetchTitlesService
     "78"=>{:code=>"us", :name=>"United States"}
   }
 
-  def get_expiring_content(country_code = 'pt')
-    repo = NetflixContentRepo.new
+  def initialize
+    @repo = NetflixContentRepo.new
+  end
 
-    expiring = repo.all_expiring(country_code)
-    # ALL THE MOVIES FROM ALL THE COUNTRIES
-    # url = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=#{country_code}&t=ns&st=adv&p=1"
-    # ONLY FOR GIVEN COUNTRY
-    # result = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1")
+  # Changes the API_COUNTRIES constant to match the simple form required
+  # format - called on forms with FetchTitlesService.new.user_countries
+  def user_countries
+    FetchTitlesService::API_COUNTRIES.values.inject([]) do |acc, country|
+      acc << [country[:code], country[:name]]
+    end
+  end
+
+  # Gets the result of UNOGS API for netflix expiring titles
+  def get_expiring_content(country_code = 'pt')
+    # Call the all_expiring method from the NetflixContentRepo service
+    # NetflixContentRepo is where the API is called
+    expiring = @repo.all_expiring(country_code)
 
     expiring.body["ITEMS"].each do |item|
       imdb_id = item["imdbid"].strip
       netflix_id = item["netflixid"].strip
+
+      item_content = Content.find_by(netflix_id: netflix_id, country_code: country_code)
+      next item_content if item_content.present?
 
        expiring_on_netflix = {
         country_code: country_code,
@@ -65,10 +77,8 @@ class FetchTitlesService
         runtime: item["runtime"]
       }
 
-      # imdb_response = httpGet("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=loadvideo&q=#{imdb_id}")
-
       if imdb_id != "notfound"
-        movie = repo.load_title(imdb_id)
+        movie = @repo.load_title(imdb_id)
 
         imdb_details = {
           genre: movie.body["RESULT"]["imdbinfo"]["genre"],
@@ -91,8 +101,8 @@ class FetchTitlesService
     end
   end
 
-  def refresh_expiring_content
-    repo = NetflixContentRepo.new
+  # def refresh_expiring_content
+  def refresh_api_cache
     country_codes = API_COUNTRIES.map { |_, country| country[:code] }
     codes_lock = Mutex.new
 
@@ -107,9 +117,9 @@ class FetchTitlesService
 
           break if country_code.nil?
 
-          expiring = repo.all_expiring(country_code)
+          expiring = @repo.all_expiring(country_code, refresh: true)
           expiring.body["ITEMS"].reject { |i| i["imdbid"] == "notfound" }.each do |item|
-            repo.load_title(item["imdbid"].strip)
+            @repo.load_title(item["imdbid"].strip, refresh: true)
           end
         end
       end
@@ -117,24 +127,4 @@ class FetchTitlesService
 
     country_threads.each(&:join)
   end
-
-  private
-
-  def httpGet(uri)
-    url = URI(uri)
-
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    request = Net::HTTP::Get.new(url)
-    request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
-
-    response = http.request(request)
-
-    body = response.read_body
-    result = JSON.parse(body)
-  end
-
 end

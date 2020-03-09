@@ -12,13 +12,36 @@
 @import "components/index";
 @import "pages/index";
 
+@import "rails-social-share-button";
+
 .page-container {
-  // position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 .content-wrap {
   flex-grow: 1;
 }
 
+a {
+  color: black;
+  &:hover {
+    color: #505050;
+    text-decoration: none;
+  }
+}
+
+.text-overflow {
+  // width:250px;
+  height:100px;
+  display:block;
+  overflow:hidden;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.btn-overflow {
+  color: #fff;
+  display: none;
+}
