@@ -25,8 +25,12 @@
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :country,
+                  as: :select,
+                  collection: FetchTitlesService.new.user_countries,
+                  label_method: :last,
+                  value_method: :first,
                   required: true,
-                  input_html: { autocomplete: "country" } %>
+                  input_html: { } %>
     </div>
 
     <div class="access-button mt-4">

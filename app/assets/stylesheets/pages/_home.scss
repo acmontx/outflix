@@ -126,3 +126,260 @@
   margin-left: 0px;
   margin-right: 200px;
 }
+
+.star1 {
+  width: 10px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 500px;
+  right: 250px;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.star1::after {
+  content: "";
+  width: 1.5px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: -4.5px;
+  right: 5px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+.circle1 {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 400px;
+  left: 250px;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.circle1::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+.star2 {
+  width: 10px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 600px;
+  right: 500px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star2::after {
+  content: "";
+  width: 1.5px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: -4.5px;
+  right: 5px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.circle2 {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 160px;
+  right: 370px;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.circle2::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #bf4eb6;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+.star3 {
+  width: 10px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: 270px;
+  right: 450px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star3::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: -4px;
+  right: 4.5px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star4 {
+  width: 6px;
+  height: 1.5px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: 390px;
+  right: 820px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star4::after {
+  content: "";
+  width: 1.5px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: -2px;
+  right: 2.4px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star5 {
+  width: 6px;
+  height: 1.5px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: 180px;
+  right: 620px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star5::after {
+  content: "";
+  width: 1.5px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: -2.1px;
+  right: 2.5px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star6 {
+  width: 6px;
+  height: 1.5px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: 323px;
+  left: 120px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star6::after {
+  content: "";
+  width: 1.5px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: -2.1px;
+  right: 2.5px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.circle3 {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: deeppink;
+  position: absolute;
+  top: 480px;
+  left: 155px;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.circle3::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: deeppink;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+.star7 {
+  width: 6px;
+  height: 1.5px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: 223px;
+  right: 180px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star7::after {
+  content: "";
+  width: 1.5px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: deeppink;
+  position: absolute;
+  top: -2.1px;
+  right: 2.5px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.circle4 {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: deeppink;
+  position: absolute;
+  top: 510px;
+  right: 685px;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.circle4::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: deeppink;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+@keyframes twinkle {
+  to {background-color: purple;}
+}

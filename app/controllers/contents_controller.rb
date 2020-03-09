@@ -1,7 +1,6 @@
 require 'date'
 
 class ContentsController < ApplicationController
-
   @category_filter = nil
   @rating_filter = nil
 
@@ -14,11 +13,9 @@ class ContentsController < ApplicationController
     @contents = @contents.where(category: 'series') if params[:category] == 'series'
 
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
-
   end
 
   def show
     @content = Content.find(params[:id])
   end
-
 end

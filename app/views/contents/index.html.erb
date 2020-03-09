@@ -3,7 +3,7 @@
     <%= link_to "Movies", {controller: "contents", action: "index", category: 'movie' }, class:"btn btn-light mb-3"%>
     <%= link_to "Series", {controller: "contents", action: "index", category: 'series' }, class:"btn btn-light mb-3"%>
 
-  <%= render '/shared/weeks_content', weeks: @weeks %>
+    <%= render '/shared/weeks_content', weeks: @weeks %>
   </div>
 </div>
 
