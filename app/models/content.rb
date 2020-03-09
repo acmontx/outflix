@@ -4,4 +4,9 @@ class Content < ApplicationRecord
   # serialize :details, JSON
   # serialize :cast, Array
 
+
+  # Hack for the calendar range to work
+  def start_time
+    Date.today
+  end
 end

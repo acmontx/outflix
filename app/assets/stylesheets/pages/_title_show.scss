@@ -1,3 +1,7 @@
+.show-container {
+  padding: 0;
+}
+
 .expiration-highlight {
   position: relative;
   z-index: 1;
@@ -28,14 +32,52 @@
 }
 
 .rails-social-share-button .ssb-icon {
-  background-size: 40px 40px !important;
-  height: 40px !important;
-  width: 40px !important;
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
 }
 
 .rails-social-share-button {
-  display: flex !important;
-  justify-content: space-around !important;
+  display: flex;
+  justify-content: space-around;
 }
 
+.simple-calendar {
+  .day {
+    padding: 0;
+    height: 30px;
+    min-width: 30px;
+  }
+  .prev-month, .next-month {
+    color: rgba(255,255,255,0.32);
+    background-color: transparent;
+  }
+  .has-events, .next-month.has-events {
+    border-radius: 50%;
+    background-color: rgba(151, 55, 129, 0.4);
+    height: 30px;
+    width: 30px;
+  }
+  .today {
+    background-color: #973781;
+  }
+  table, tr, th, td {
+    border: none;
+  }
+  a {
+    color: rgba(255,255,255,0.32);
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+.day-content {
+  padding: 0.4em;
+}
+
+.calendar {
+  height: 100%;
+  position: sticky;
+  top: 0;
+}
 
