@@ -113,10 +113,19 @@
 }
 
 .hp-card {
-  width: 35%;
+  width: 550px;
   height: 375px;
   background-color: #505050;
   border: 4px solid black;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-top: -175px;
+}
+
+.hp-video-one {
+  overflow: hidden;
+  object-fit: fill;
+  border: 5px solid black;
   border-radius: 10px;
   margin-left: 200px;
   margin-top: -175px;
