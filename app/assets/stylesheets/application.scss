@@ -12,6 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
+@import "rails-social-share-button";
+
 .page-container {
   min-height: 100vh;
   display: flex;
@@ -30,10 +32,16 @@ a {
   }
 }
 
-.title_description a {
-  color: #F8F9FA;
-  &:hover {
-    color: #F0C7EA;
-    text-decoration: none;
-  }
+.text-overflow {
+  // width:250px;
+  height:100px;
+  display:block;
+  overflow:hidden;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.btn-overflow {
+  color: #fff;
+  display: none;
 }
