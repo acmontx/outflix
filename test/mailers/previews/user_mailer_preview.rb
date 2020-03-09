@@ -8,4 +8,10 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: user).expiring
   end
 
+  def dashboard
+    user = User.first
+
+    UserMailer.with(user: user).dashboard
+  end
+
 end
