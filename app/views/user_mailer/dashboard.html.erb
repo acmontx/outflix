@@ -1,0 +1,36 @@
+
+<%#= @weeks %>
+
+<img src="https://res.cloudinary.com/mrbean/image/upload/v1583510060/samples/outflix/logo_email_ynvx59.png" style="width:300px">
+
+<h2> Hello <%= @user.first_name.capitalize %>  <%= @user.last_name.capitalize %> </h2>
+<h3>Check this month leaving titles !</h3>
+
+<% @weeks.each do |week| %>
+<!-- <h1>Week <%= week.first %></h1>
+-->
+<h3> <%= (Date.commercial(2020, week[0]).strftime("%A, %b %d"))%> - <%= ((Date.commercial(2020, week[0]) + 6).strftime("%A, %b %d"))%> </h3>
+  <ul>
+    <% week.last.each do |content| %>
+      <li><%= content.title %></li>
+      <ul><%= content.expiration_date %></ul>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to "Go to Outlix website!!", root_url %>
+
+<!--
+<h3>Never miss out on the chance to watch a Netflix title before it leaves the platform ever again!</h3>
+<h3>Set your account, and receive notifications!</h3>
+<h3>Check the calendar with all leaving titles!</h3>
+<h3>Expiring contents!! Go to Outflix App!!!!</h3>
+-->
+
+<style>
+
+
+
+
+</style>
