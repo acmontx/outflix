@@ -9,7 +9,7 @@
     <div class="col-12 col-lg-7">
       <div class="p-lg-4">
         <% if @content.title.present? %>
-          <h4 class="font-italic"><%=h @content.title.gsub(/&amp;#39;/, "'").html_safe %></h4>
+          <h4 class="font-italic title-font"><%=h @content.title.gsub(/&amp;#39;/, "'").html_safe %></h4>
         <% end %>
         <div class="d-flex justify-content-between mt-3">
           <div class="d-flex">
@@ -80,7 +80,7 @@
     <div class="col-12 col-lg-10">
       <div class="d-lg-flex justify-content-between ml-lg-5">
         <div>
-          <h4 class="py-3">Actors</h4>
+          <h4 class="py-3 header-font">Actors</h4>
           <div>
             <% if @content.cast.present? %>
               <% if @content.cast[0]["actor"].present? %>
@@ -96,7 +96,7 @@
           </div>
         </div>
         <div>
-          <h4 class="py-3">Creators</h4>
+          <h4 class="py-3 header-font">Creators</h4>
           <div>
             <% if @content.cast.present? %>
               <% if @content.cast[1]["creator"].present? %>
@@ -112,7 +112,7 @@
           </div>
         </div>
         <div>
-          <h4 class="py-3">Directors</h4>
+          <h4 class="py-3 header-font">Directors</h4>
           <div>
             <% if @content.cast.present? %>
               <% if @content.cast[2]["director"].present? %>
