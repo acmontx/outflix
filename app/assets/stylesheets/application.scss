@@ -7,12 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "rails-social-share-button";
+@import "simple_calendar";
 
 // Your CSS partials
-@import "components/index";
 @import "pages/index";
-
-@import "rails-social-share-button";
+@import "components/index";
 
 .page-container {
   min-height: 100vh;

@@ -23,6 +23,7 @@ gem 'nokogiri'
 gem 'pg_search'
 gem 'pundit'
 gem 'rails-social-share-button'
+gem "simple_calendar", "~> 2.0"
 
 
 group :development do
