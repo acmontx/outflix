@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   as :user do
     get 'users/profile', :to => 'contents#index', :as => :user_root
-
   end
+
+  get 'notifications', to: 'notifications#index'
+  post 'notifications', to: 'notifications#edit'
 
   root to: 'pages#home'
 
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
   end
 
 end
+
 

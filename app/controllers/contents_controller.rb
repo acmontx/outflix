@@ -21,7 +21,7 @@ class ContentsController < ApplicationController
     end
 
     if params[:imdb_rating]
-      @contents = @contents.select { |content| content[:imdb_rating] > params[:imdb_rating].to_f }
+      @contents = @contents.select { |content| content[:imdb_rating].to_f > params[:imdb_rating].to_f }
     end
 
     if params[:genre]
