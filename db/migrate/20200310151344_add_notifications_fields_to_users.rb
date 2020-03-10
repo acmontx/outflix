@@ -1,4 +1,4 @@
-class AddFrequencyToUsers < ActiveRecord::Migration[5.2]
+class AddNotificationsFieldsToUsers < ActiveRecord::Migration[5.2]
   def change
     add_column :users, :frequency, :string
     add_column :users, :medium, :string
