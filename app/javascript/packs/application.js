@@ -1,5 +1,5 @@
 import "bootstrap";
-import '../stylesheets/application';
+import '../../assets/stylesheets/application';
 
 // Read more logic on show page
 const text = document.querySelector('.text-overflow');
