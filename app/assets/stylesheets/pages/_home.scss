@@ -98,7 +98,7 @@
 
 .hp-cards-info-container-two {
   width: 33%;
-  margin: -100px 50px 100px 300px;
+  margin: -100px 25px 100px 250px;
 }
 
 .hp-cards-info {
@@ -112,28 +112,22 @@
   text-align: right;
 }
 
-.hp-card {
-  width: 550px;
-  height: 375px;
-  background-color: #505050;
-  border: 4px solid black;
-  border-radius: 10px;
-  margin-left: 200px;
-  margin-top: -175px;
-}
-
 .hp-video-one {
   overflow: hidden;
   object-fit: fill;
   border: 5px solid black;
   border-radius: 10px;
-  margin-left: 200px;
+  margin-left: 150px;
   margin-top: -175px;
 }
 
-.hp-card-two {
-  margin-left: 0px;
-  margin-right: 200px;
+.hp-video-two {
+  overflow: hidden;
+  object-fit: fill;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-top: -175px;
 }
 
 .star1 {

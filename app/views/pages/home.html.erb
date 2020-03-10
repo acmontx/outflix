@@ -30,7 +30,7 @@
 <div class="hp-cards-container">
   <div class="hp-cards-banner"></div>
   <div class="hp-cards">
-    <div>
+    <div class="row col-12 col-md-6">
       <%= video_tag 'available_until.mov', size: "545x370", autoplay: :autoplay, loop: :loop, muted: :muted, class: "hp-video-one" %>
     </div>
     <div class="hp-cards-info-container-one">
@@ -47,7 +47,9 @@
         Get notified about all the titles Netflix has assigned an 'Available until…'' date on
       </p>
     </div>
-    <div class="hp-card hp-card-two"></div>
+    <div class="row col-12 col-md-6">
+      <%= video_tag 'available_until.mov', size: "545x370", autoplay: :autoplay, loop: :loop, muted: :muted, class: "hp-video-two" %>
+    </div>
   </div>
 </div>
 
