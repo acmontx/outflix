@@ -6,7 +6,7 @@
     <%= link_to "Series", @params.merge({ controller: "contents", action: "index", category: 'series' }), class:"btn btn-light mb-3 filter #{'filter_selected' if params[:category] == 'series'}" %>
 
     <div class="btn btn-light mb-3">
-      <%= link_to "", @params.merge({ controller: "contents", action: "index" }), class:"filter #{ params[:imdb_rating].to_f >= 0 ? "fas" : "far" } fa-star" %>
+      <%= link_to "", @params.merge({ controller: "contents", action: "index", imdb_rating: '0' }), class:"filter #{ params[:imdb_rating].to_f >= 0 ? "fas" : "far" } fa-star" %>
       <%= link_to "", @params.merge({ controller: "contents", action: "index", imdb_rating: '2' }), class:"filter #{ params[:imdb_rating].to_f >= 2 ? "fas" : "far" } fa-star" %>
       <%= link_to "", @params.merge({ controller: "contents", action: "index", imdb_rating: '4' }),class:"filter #{params[:imdb_rating].to_f >= 4 ? "fas" : "far" } fa-star" %>
       <%= link_to "", @params.merge({ controller: "contents", action: "index", imdb_rating: '6' }), class:"filter #{params[:imdb_rating].to_f >= 6 ? "fas" : "far" } fa-star" %>
@@ -16,7 +16,7 @@
     <button class="btn btn-light mb-3 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Genre
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu genres-dropdown" aria-labelledby="dropdownMenuButton">
       <% @genres.each do |genre| %>
       <a class="dropdown-item" href="#"><%= link_to genre, @params.merge({ controller: "contents", action: "index", genre: genre }) %></a>
       <% end %>
