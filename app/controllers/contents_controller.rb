@@ -30,6 +30,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @contents = Content.where(country_code: current_user.country)
     @content = Content.find(params[:id])
   end
 
