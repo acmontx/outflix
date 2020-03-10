@@ -1,6 +1,5 @@
 import "bootstrap";
 
-
 // Read more logic on show page
 const text = document.querySelector('.text-overflow');
 const btn = document.querySelector('.btn-overflow');

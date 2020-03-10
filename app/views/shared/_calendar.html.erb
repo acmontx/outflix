@@ -1,0 +1,5 @@
+<%= month_calendar events: [@content], end_attribute: :expiration_date do |date, contents| %>
+  <div class="day-content <%= contents.size > 0 %>">
+    <%= date.day %>
+  </div>
+<% end %>
