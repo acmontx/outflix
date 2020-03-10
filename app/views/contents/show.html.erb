@@ -26,10 +26,6 @@
                   <%= image_tag "IMDb-icon.png", alt: "imdb logo" %>
                   <p class="mb-0 pl-2"><%= @content.imdb_rating || 'N/A' %></p>
                 </div>
-                <div class="ml-4 d-flex align-items-center">
-                  <%= image_tag "netflix-icon.png", alt: "netflix logo" %>
-                  <p class="mb-0 pl-2"><%= @content.netflix_rating || 'N/A' %></p>
-                </div>
               </div>
 
               <div>
@@ -79,7 +75,6 @@
               <p>Sorry, we were not able to grab more information on this title.</p>
             <% end %>
           </div>
-
         </div>
       </div>
 
