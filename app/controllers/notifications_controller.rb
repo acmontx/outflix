@@ -8,5 +8,4 @@ class NotificationsController < ApplicationController
     # current_user[:notification_size] = params[:notifications][:notification_size]
     current_user.save!
   end
-
 end

@@ -1,8 +1,8 @@
 <div class="card-content dashboard">
   <%= link_to content_path(content) do %>
-  <img src="<%= content.image_url %>" />
-  <div class="card-content-info">
-    <p> <%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
+    <img src="<%= content.image_url %>" />
+    <div class="card-content-info">
+      <p> <%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
+    </div>
   <% end %>
-  </div>
 </div>
