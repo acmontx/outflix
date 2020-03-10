@@ -1,1 +1,17 @@
-<h1>hello</h1>
+<div class="container-access">
+  <h2> Notifications Preferences</h2>
+
+  <%= simple_form_for :notifications, url: notifications_path do |f| %>
+    <%= f.error_notification %>
+
+    <div class="notifications">
+      <%= f.input :frequency, selected: current_user[:frequency], collection: ['Weekly', 'Monthly'], label: "How often would you like to be notified?" %>
+      <%= f.input :medium, selected: current_user[:medium], collection: ['Email', 'Text'], label: "How would you like to be notified?" %>
+      <%#= f.input :notification_size, selected: current_user[:notification_size], collection: ['One Week', 'Month'], label: "How much content do you want?" %>
+    </div>
+
+    <div class="access-button mt-4">
+      <%= f.submit "Submit", class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>
