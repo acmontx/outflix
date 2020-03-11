@@ -30,7 +30,7 @@
 <div class="hp-cards-container">
   <div class="hp-cards-banner"></div>
   <div class="hp-cards">
-    <div class="row col-12 col-md-6">
+    <div class="row col-xs-12 col-md-6 offset-md-1">
       <%= video_tag 'available_until.mov', size: "545x370", autoplay: :autoplay, loop: :loop, muted: :muted, class: "hp-video-one" %>
     </div>
     <div class="hp-cards-info-container-one">
@@ -40,16 +40,14 @@
     </div>
   </div>
 
-  <div class="hp-cards-banner"></div>
-  <div class="hp-cards">
-    <div class="hp-cards-info-container-two">
-      <p class="hp-cards-info hp-info-two">
-        Get notified about all the titles Netflix has assigned an 'Available until…'' date on
-      </p>
-    </div>
-    <div class="row col-12 col-md-6">
-      <%= video_tag 'available_until.mov', size: "545x370", autoplay: :autoplay, loop: :loop, muted: :muted, class: "hp-video-two" %>
-    </div>
+  <div class="hp-cards-banner col-12"></div>
+  <div class="hp-cards-info-container-two row col-8 col-md-4 offset-md-4">
+    <p class="hp-cards-info hp-info-two">
+      Get notified about all the titles Netflix has assigned an 'Available until…'' date on
+    </p>
+  </div>
+  <div class="row col-xs-12 col-md-6 offset-md-6">
+    <%= video_tag 'available_until.mov', size: "545x370", autoplay: :autoplay, loop: :loop, muted: :muted, class: "hp-video-two" %>
   </div>
 </div>
 
