@@ -11,9 +11,6 @@ class User < ApplicationRecord
     self.country.downcase!
   end
 
-  def send_newsletter
-    UserMailer.with(user: self).newsletter.deliver_now
-  end
 
   private
 

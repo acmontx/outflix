@@ -13,13 +13,13 @@ class UserMailer < ApplicationMailer
   end
 
   def newsletter
+    @user = params[:user]
     @service = FetchTitlesService.new
-    @service.get_expiring_content(params[:user].country)
-    @contents = Content.where(country_code: params[:user].country)
-
+    @service.get_expiring_content(@user.country)
+    @contents = Content.where(country_code: @user.country)
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
 
-    @user = params[:user]
+
     mail(to: @user.email, subject: 'Outflix newsletter!')
   end
 
