@@ -106,7 +106,7 @@ class FetchTitlesService
     country_codes = API_COUNTRIES.map { |_, country| country[:code] }
     codes_lock = Mutex.new
 
-    country_threads = 4.times do
+    country_threads = (0..3).collect do
       Thread.new do
         country_code = nil
 

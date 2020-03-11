@@ -2,7 +2,7 @@
   <h2> Notifications Preferences</h2>
 
   <%= simple_form_for :notifications, url: notifications_path do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
   <div class="notifications">
     <%= f.input :frequency, selected: current_user[:frequency], collection: ['Weekly', 'Monthly', 'Demo - deliver now'], label: "How often would you like to be notified?" %>
@@ -11,8 +11,7 @@
   </div>
 
   <div class="access-button mt-4">
-      <%= f.submit "Submit", class: "btn btn-dark" %>
-    </div>
+    <%= f.submit "Submit", class: "btn btn-dark" %>
+  </div>
   <% end %>
-
 </div>

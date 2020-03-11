@@ -21,7 +21,7 @@ class NetflixContentRepo
   private
 
   # 3. Checks if the API result exists on the
-  def ensure_call(query, refresh = false)
+  def ensure_call(query, refresh = false, retried = false)
     # call that was already on db
     cached = NetflixApiCall.find_by(query: query)
 
@@ -33,6 +33,9 @@ class NetflixContentRepo
       # 4. creates new call - changed create! to new
       refresh(NetflixApiCall.new(query: query))
     end
+  rescue ActiveRecord::RecordInvalid
+    raise if retried
+    ensure_call(query, refresh, true)
   end
 
   # 4.

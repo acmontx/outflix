@@ -15,7 +15,4 @@ Rails.application.routes.draw do
     #   get 'setup'
     # end
   end
-
 end
-
-

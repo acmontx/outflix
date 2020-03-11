@@ -1,5 +1,3 @@
-
-<%#= @weeks %>
 <div class="email-container">
 
   <div>
@@ -7,8 +5,8 @@
   </div>
 
   <div>
-    <h2> Hello <%= @user.first_name.capitalize %>  <%= @user.last_name.capitalize %> </h2>
-    <h3>Check this month leaving titles !</h3>
+    <h2>Hello <%= @user.first_name.capitalize %>  <%= @user.last_name.capitalize %> </h2>
+    <h3>Check out the titles leaving Netflix in the next few weeks!</h3>
   </div>
 
   <div>
@@ -41,11 +39,6 @@
   </div>
 </div>
 
-
-<!--
-
--->
-
 <style>
   .email-container {
     text-align: center;
@@ -58,36 +51,14 @@
     margin: auto;
   }
 
-  .email-content{
-    border-left: 1vw solid clear;
-    border-right: 1vw solid clear;
-    border-bottom: 0.8vw solid clear;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    background-color: white;
-    margin: 0 auto 25px;
-  }
-  .email-content h3 {
+  h3 {
     font-family: 'Oswald', sans-serif;
     padding: 20px 0 20px 30px;
     margin-bottom: 0px;
   }
 
-  .email-cards{
-    overflow: hidden;
-    background: white;
-  }
-
-  .email-cards > img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-
   .email-card-info p {
     text-align: center;
     margin: 0 auto 20px;
    }
-
 </style>
