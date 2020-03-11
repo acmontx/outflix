@@ -5,7 +5,7 @@
   <%= f.error_notification %>
 
   <div class="notifications">
-    <%= f.input :frequency, selected: current_user[:frequency], collection: ['Weekly', 'Monthly'], label: "How often would you like to be notified?" %>
+    <%= f.input :frequency, selected: current_user[:frequency], collection: ['Weekly', 'Monthly', 'Demo - deliver now'], label: "How often would you like to be notified?" %>
     <%= f.input :medium, selected: current_user[:medium], collection: ['Email', 'Text'], label: "How would you like to be notified?" %>
     <%#= f.input :notification_size, selected: current_user[:notification_size], collection: ['One Week', 'Month'], label: "How much content do you want?" %>
   </div>
