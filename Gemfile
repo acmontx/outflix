@@ -27,6 +27,7 @@ gem 'pg_search'
 gem 'pundit'
 gem 'rails-social-share-button'
 gem "simple_calendar", "~> 2.0"
+gem "twilio-ruby"
 
 
 group :development do
@@ -40,4 +41,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+
 end
