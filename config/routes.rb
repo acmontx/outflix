@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   as :user do
-    get 'users/profile', :to => 'contents#index', :as => :user_root
+    get 'users/profile', to: 'contents#index', as: :user_root
   end
 
-  get 'notifications', to: 'notifications#index'
-  post 'notifications', to: 'notifications#edit'
+  resources :notifications, only: [:index, :edit, :update]
 
   get 'donations', to: 'donations#index'
   post 'donations', to: 'donations#edit'

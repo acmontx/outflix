@@ -1,6 +1,6 @@
 require 'date'
 
-class ContentsController < ApplicationController
+class ContentsController < ApplicationController\
 
   def index
     @service = FetchTitlesService.new
