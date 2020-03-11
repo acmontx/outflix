@@ -13,6 +13,7 @@ class ContentsController < ApplicationController
 
     @params = params.permit(:category, :imdb_rating, :genre)
     @genres = ["Action", "Animation", "Crime", "Comedy", "Documentary", "Drama", "Horror", "Romance", "Sci-Fi", "War" ]
+
   end
 
   def filter_content
@@ -35,4 +36,3 @@ class ContentsController < ApplicationController
   end
 
 end
-

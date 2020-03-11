@@ -1,0 +1,19 @@
+<div class="container-access">
+  <h2> DONATE </h2>
+
+  <%= simple_form_for :payment, url: donations_path do |f| %>
+    <%= f.error_notification %>
+
+  <div class="payment-details">
+    <%= f.input :full_name, label:'Full Name:', input_html: { autocomplete: "cc-name" } %>
+    <%= f.input :credit_card_number, label: 'Credit Card Number:', input_html: { autocomplete: "cc-number" } %>
+    <%= f.input :expiration_date, label: 'Expiration Date:', input_html: { autocomplete: "cc-exp" } %>
+    <%= f.input :amount, label: 'Donation Amount:', selected:'€5', collection: ['€5', '€10','€20'] %>
+  </div>
+
+  <div class="access-button mt-4">
+    <%= f.submit "Donate", class: "btn btn-dark" %>
+  </div>
+  <% end %>
+
+</div>
