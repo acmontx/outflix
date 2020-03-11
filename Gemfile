@@ -28,7 +28,6 @@ gem 'pundit'
 gem 'rails-social-share-button'
 gem "simple_calendar", "~> 2.0"
 gem "twilio-ruby"
-gem 'stripe_event'
 
 
 group :development do

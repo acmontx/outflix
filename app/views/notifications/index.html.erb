@@ -7,6 +7,7 @@
     <div class="notifications">
       <%= f.input :frequency, selected: current_user[:frequency], collection: ['Weekly', 'Monthly', 'Demo - deliver now'], label: "How often would you like to be notified?" %>
       <%= f.input :medium, selected: current_user[:medium], collection: ['Email', 'Text'], label: "How would you like to be notified?" %>
+      <%= f.input :phone_number, label: "Phone Number" %>
     </div>
 
   <div class="access-button mt-4">
@@ -14,3 +15,14 @@
   </div>
   <% end %>
 </div>
+
+<script>
+  const how = document.getElementById('user_medium')
+  how.addEventListener('change', (event) => {
+    console.log(event.target.value);
+    if event.target.value = 'Email' {
+      document.getElementById('user_phone_number').classList.toggle('hidden');
+    };
+  });
+
+</script>

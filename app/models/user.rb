@@ -11,6 +11,17 @@ class User < ApplicationRecord
     self.country.downcase!
   end
 
+  def send_text_message
+    return unless phone_number.present?
+
+    @twilio = TwilioService.new
+
+    titles = Content.expiring_next(self).pluck(:title)
+    message = titles.to_sentence.truncate(150)
+    message = "These shows are leaving netflix soon: #{message} Check the full list at https://outflix.rocks/contents"
+
+    @twilio.send_text(message, phone_number)
+  end
 
   private
 

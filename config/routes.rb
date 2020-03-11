@@ -7,11 +7,6 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index, :edit, :update]
 
-  get 'donations', to: 'donations#index'
-  post 'donations', to: 'donations#edit'
-
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
-
   root to: 'pages#home'
 
   resources :contents do
