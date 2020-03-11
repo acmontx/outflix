@@ -5,21 +5,23 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.expiring.subject
   #
-  def expiring
+  def welcome_email
     @user = params[:user] # Instance variable => available in view
 
-    mail(to: @user.email, subject: 'Expiring Netf..x Titles!')
+    mail(to: @user.email, subject: 'Welcome to Outflix!')
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def dashboard
+  def newsletter
+    @user = params[:user]
     @service = FetchTitlesService.new
-    @service.get_expiring_content(params[:user].country)
-    @contents = Content.where(country_code: params[:user].country)
-
+    @service.get_expiring_content(@user.country)
+    @contents = Content.where(country_code: @user.country)
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
 
-    @user = params[:user]
-    mail(to: @user.email, subject: 'Dashboard')
+
+    mail(to: @user.email, subject: 'Outflix newsletter!')
   end
+
+
 end
