@@ -3,13 +3,12 @@
 -->
 <div class="email-sign-up">
 <img src="https://res.cloudinary.com/mrbean/image/upload/v1583510060/samples/outflix/logo_email_ynvx59.png" style="width:300px">
-<h1>Outflix</h1>
 
-<h2>Welcome <%= @user.first_name.capitalize %>  <%= @user.last_name.capitalize %> to Outflix App!!!</h2>
+<h2>Hi <%= @user.first_name.capitalize %>, welcome to Outflix!</h2>
 <h3>Never miss out on the chance to watch a Netflix title before it leaves the platform ever again!</h3>
 <h3>Set your account, and receive notifications!</h3>
 <h3>Check the calendar with all leaving titles!</h3>
-<h3>Expiring contents!! Go to Outflix App!!!!</h3>
+
 
 <%= link_to "Get back to Outlix website", root_url %>
 </div>
@@ -22,7 +21,3 @@
     margin: 35px auto;
   }
 </style>
-
-<!--
-
--->

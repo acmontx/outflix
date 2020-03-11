@@ -22,5 +22,4 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     mail(to: @user.email, subject: 'Dashboard')
   end
-
 end
