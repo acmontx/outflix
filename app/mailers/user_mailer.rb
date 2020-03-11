@@ -22,6 +22,4 @@ class UserMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'Outflix newsletter!')
   end
-
-
 end
