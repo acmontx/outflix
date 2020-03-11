@@ -7,7 +7,9 @@ namespace :outflix do
     # if its notification preference is monthly
     # call newsletter every 4 weeks
 
-
+    if Time.now.to_date.monday?
+      User.where
+    end
 
   end
 end
