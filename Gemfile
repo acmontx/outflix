@@ -3,6 +3,9 @@ ruby '2.6.5'
 
 gem 'letter_opener', group: :development
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
