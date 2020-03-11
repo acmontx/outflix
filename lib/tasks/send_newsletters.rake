@@ -7,8 +7,22 @@ namespace :outflix do
     # if its notification preference is monthly
     # call newsletter every 4 weeks
 
-    if Time.now.to_date.monday?
-      User.where
+    if Date.today.monday?
+      weekly_users = User.where(frequency: "Weekly")
+      weekly_users.each do |user|
+        UserMailer.with(user: user).newsletter.deliver_now
+      end
+    else
+      puts "This task should only be executed on Mondays. Over and out!"
+    end
+
+    if Date.today == Date.today.beginning_of_month
+      monthly_users = User.where(frequency: "Monthly")
+      monthly_users.each do |user|
+        UserMailer.with(user: user).newsletter.deliver_now
+      end
+    else
+      puts "This task should only be executed on the 1st day of every month. Over and out!"
     end
 
   end
