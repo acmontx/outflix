@@ -1,17 +1,8 @@
-<div class="card-content card dashboard">
+<div class="card-content dashboard">
   <%= link_to content_path(content) do %>
-    <div class="card__side card__side--front card__side--front-1">
-      <div class="card__description">
-        <img src="<%= content.image_url %>" />
-        <div class="card-content-info card__description">
-          <p><%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
-        </div>
-      </div>
-    </div>
-    <div class="card__side card__side--back card__side--back-1">
-      <div class="card__description">
-        <p>back</p>
-      </div>
+    <img src="<%= content.image_url %>" />
+    <div class="card-content-info">
+      <p><%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
     </div>
   <% end %>
 </div>
