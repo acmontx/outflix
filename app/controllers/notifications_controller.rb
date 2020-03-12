@@ -7,10 +7,13 @@ class NotificationsController < ApplicationController
       if user_params[:frequency] == "Demo - deliver now"
         if user_params[:medium] == 'Email'
           UserMailer.with(user: current_user).newsletter.deliver_now
-          flash[:success] = "We've sent you an email. Check your inbox!"
+          flash[:notice] = "We've sent you an email. Check your inbox!"
         else
           current_user.send_text_message
+          flash[:notice] = "We've sent you an SMS. Check your phone!"
         end
+      else
+        flash[:notice] = "Your notification preferences are set!"
       end
 
       redirect_to contents_path
