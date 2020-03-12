@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
   def update
     if current_user.update(user_params)
       if user_params[:frequency] == "Demo - deliver now"
-        if user[:medium] == 'Email'
+        if user_params[:medium] == 'Email'
           UserMailer.with(user: current_user).newsletter.deliver_now
         else
           current_user.send_text_message
