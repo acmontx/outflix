@@ -26,7 +26,7 @@ class ContentsController < ApplicationController\
     end
 
     if params[:genre]
-      @contents = @contents.select { |content| content[:genre].include? params[:genre] }
+      @contents = @contents.select { |content| !content[:genre].nil? && content[:genre].include?(params[:genre])  }
     end
   end
 

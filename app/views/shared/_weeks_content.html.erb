@@ -1,12 +1,16 @@
-<h2> Hurry up! These will be leaving Netflix soon! </h2>
-<% weeks.each do |content_by_week| %>
-  <div class="weekly-content">
-    <h3><%= (Date.commercial(2020, content_by_week[0]).strftime("%A, %d/%m"))%> - <%= ((Date.commercial(2020, content_by_week[0]) + 6).strftime("%A, %d/%m"))%> </h3>
+<%= if @contents.nil? %>
+  <h2>Sorry! We couldn't find anything that matches your search!</h2>
+<% else %>
+  <h2> Hurry up! These will be leaving Netflix soon! </h2>
+  <% weeks.each do |content_by_week| %>
+    <div class="weekly-content">
+      <h3><%= (Date.commercial(2020, content_by_week[0]).strftime("%A, %d/%m"))%> - <%= ((Date.commercial(2020, content_by_week[0]) + 6).strftime("%A, %d/%m"))%> </h3>
 
-    <div class="cards-container dashboard">
-      <% content_by_week[1].each do |content| %>
-        <%= render '/shared/content_card', content: content %>
-      <% end %>
+      <div class="cards-container dashboard">
+        <% content_by_week[1].each do |content| %>
+          <%= render '/shared/content_card', content: content %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
