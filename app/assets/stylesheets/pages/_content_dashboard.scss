@@ -22,7 +22,7 @@
 
 .cards-container.dashboard {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 20px;
 }
@@ -49,6 +49,8 @@
 
 .filter_selected {
   background-color: #b46dfe;
+  border: 1px solid #b46dfe;
+  color: white;
 }
 
 .fa, .fas {
@@ -62,3 +64,8 @@
   padding-left: 0.5rem;
 }
 
+.show > .btn-light.dropdown-toggle {
+  background-color: #b46dfe;
+  border: 1px solid #b46dfe;
+  color: white;
+}
