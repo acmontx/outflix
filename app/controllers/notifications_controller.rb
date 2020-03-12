@@ -7,6 +7,7 @@ class NotificationsController < ApplicationController
       if user_params[:frequency] == "Demo - deliver now"
         if user_params[:medium] == 'Email'
           UserMailer.with(user: current_user).newsletter.deliver_now
+          flash[:success] = "We've sent you an email. Check your inbox!"
         else
           current_user.send_text_message
         end
@@ -24,4 +25,3 @@ class NotificationsController < ApplicationController
     params.require(:user).permit(:medium, :frequency, :phone_number)
   end
 end
-

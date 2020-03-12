@@ -6,7 +6,6 @@
 .cards-container > img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
 }
 
 .card-content h2 {
@@ -17,7 +16,7 @@
 
 .card-content p {
   font-size: 12px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
 
@@ -29,3 +28,9 @@
   position: relative;
 }
 
+.card-content img {
+  object-fit: cover;
+  &:hover {
+    box-shadow: 5px 6px 34px -5px rgba(0,0,0,0.75);
+  }
+}

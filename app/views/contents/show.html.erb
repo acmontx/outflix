@@ -184,10 +184,16 @@
     <div class="calendar col-12 col-lg-3 mt-5">
       <%= render 'shared/calendar' %>
       <div class="text-center mt-5">
-        <h4>
-          Days remaining:
-          <%= (@content.expiration_date - @content.start_time + 1).to_i %>
-        </h4>
+        <% if @content.expiration_date > @content.start_time %>
+          <h4>
+            Days remaining:
+            <%= (@content.expiration_date - @content.start_time + 1).to_i %>
+          </h4>
+        <% else %>
+          <h5>
+          Uh oh! <%= @content.title %> already left Netflix.
+          </h5>
+        <% end %>
       </div>
     </div>
 
