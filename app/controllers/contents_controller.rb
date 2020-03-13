@@ -7,12 +7,12 @@ class ContentsController < ApplicationController
     @contents = Content.where(country_code: current_user.country)
 
     filter_content
-
+    @updated
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
 
     @params = params.permit(:category, :imdb_rating, :genre)
     @genres = ["Action", "Animation", "Crime", "Comedy", "Documentary", "Drama", "Family", "Horror", "Music", "Romance", "Sci-Fi", "War" ]
-  end
+    end
 
   def filter_content
     if params[:category]
