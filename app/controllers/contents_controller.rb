@@ -1,14 +1,13 @@
 require 'date'
 
 class ContentsController < ApplicationController
-
   def index
     @service = FetchTitlesService.new
     @service.get_expiring_content(current_user.country)
     @contents = Content.where(country_code: current_user.country)
 
     filter_content
-    @updated
+
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
 
     @params = params.permit(:category, :imdb_rating, :genre)
@@ -33,5 +32,4 @@ class ContentsController < ApplicationController
     @contents = Content.where(country_code: current_user.country)
     @content = Content.find(params[:id])
   end
-
 end
