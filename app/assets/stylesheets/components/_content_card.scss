@@ -31,13 +31,14 @@
 .front {
   position: relative;
   &:hover {
+    box-shadow: 1px 1px 18px -1px rgba(68,68,68,0.5);
     .text {
       opacity: 1;
     }
   }
 
   .text {
-    background-color: rgba(68,68,68,0.8);
+    background-color: rgba(92, 32, 73, 0.8);
     background-size: 100%;
     text-align: center;
     position: absolute;
@@ -57,11 +58,3 @@
   }
 }
 
-.card-content img {
-  display: block;
-  object-fit: cover;
-  &:hover {
-    box-shadow: 1px 1px 18px -1px rgba(68,68,68,0.5);
-    opacity: 0.8;
-  }
-}

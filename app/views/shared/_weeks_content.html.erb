@@ -1,12 +1,12 @@
 <% if @weeks.any? %>
   <h2> Hurry up! These will be leaving Netflix</h2>
 
-  <% weeks.each do |content_by_week| %>
+  <% @weeks.each do |content_by_week| %>
     <div class="weekly-content">
       <h3><%= (Date.commercial(2020, content_by_week[0]).strftime("%A, %d/%m"))%> - <%= ((Date.commercial(2020, content_by_week[0]) + 6).strftime("%A, %d/%m"))%> </h3>
 
       <div class="cards-container dashboard">
-        <% content_by_week[1].each do |content| %>
+        <% content_by_week[1].sort_by { |f| f.expiration_date }.each do |content| %>
           <%= render '/shared/content_card', content: content %>
         <% end %>
       </div>
