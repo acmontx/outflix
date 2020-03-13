@@ -1,8 +1,28 @@
 <div class="card-content dashboard">
-  <%= link_to content_path(content) do %>
-    <img src="<%= content.image_url %>" />
-    <div class="card-content-info">
-      <p><%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
+  <div class="sides">
+    <div class="front">
+      <%= link_to content_path(content) do %>
+        <img src="<%= content.image_url %>" />
+        <div class="text">
+          <% if content.expiration_date > content.start_time %>
+            <p>LEAVES IN</p>
+            <h4><%= (content.expiration_date - content.start_time + 1).to_i %></h4>
+            <p>DAYS</p>
+          <% elsif content.expiration_date == content.start_time %>
+            <br>
+            <p>LEAVING</p>
+            <h4>TODAY</h4>
+          <% else %>
+            <br>
+            <p>ALREADY</p>
+            <p>LEFT</p>
+          <% end %>
+          <small>Click for details</small>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+  <div class="card-content-info">
+    <p><%= content.expiration_date.strftime("%d/ %m/ %y") %></p>
+  </div>
 </div>

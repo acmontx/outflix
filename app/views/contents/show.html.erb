@@ -72,7 +72,7 @@
               <% end %>
             </div>
             <% if @content.plot.present? %>
-              <div class="text-overflow pt-4"><%=h @content.plot.gsub(/&amp;#39;/, "'") %></div>
+              <div class="text-overflow pt-4"><%=h @content.plot.gsub(/&amp;#39;/, "'").gsub(/&eacute;/, "é") %></div>
               <%= link_to "Read more...", "#", class: "btn-overflow pt-1 font-italic" %>
             <% else %>
               <p>Sorry, we were not able to grab more information on this title.</p>
