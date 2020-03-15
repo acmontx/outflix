@@ -47,7 +47,7 @@ class FetchTitlesService
   # Changes the API_COUNTRIES constant to match the simple form required
   # format - called on forms with FetchTitlesService.new.user_countries
   def user_countries
-    FetchTitlesService::API_COUNTRIES.values.inject([]) do |acc, country|
+    API_COUNTRIES.values.inject([]) do |acc, country|
       acc << [country[:code], country[:name]]
     end
   end
