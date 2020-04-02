@@ -1,3 +1,6 @@
+// THIS CODE WAS NOT USED DUE TO SECURITY ISSUES AND
+// BECAUSE IT WOULD NEED FURTHER METHODS THAT WOULD REQUIRE MORE TIME TO DO
+// THAN WE HAD
 import Netflix from 'netflix2';
 
 Netflix.prototype.getMyList = function (callback) {

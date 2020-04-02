@@ -15,16 +15,3 @@
     </div>
   <% end %>
 </div>
-
-<script>
-  const how = document.getElementById('user_medium')
-  how.addEventListener('change', (event) => {
-    const phoneField = document.querySelector('.user_phone_number');
-
-    if (event.target.value === 'Email') {
-      phoneField.classList.add('d-none');
-    } else {
-      phoneField.classList.remove('d-none');
-    }
-  });
-</script>

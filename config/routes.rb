@@ -9,9 +9,5 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :contents do
-    # collection do
-    #   get 'setup'
-    # end
-  end
+  resources :contents
 end

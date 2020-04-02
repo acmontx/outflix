@@ -3,7 +3,7 @@ require 'net/http'
 require 'openssl'
 
 class NetflixContentRepo
-  # Base API endpoint, common to all UNOGS API queries
+  # Constant for the base API endpoint, common to all UNOGS API queries
   API_URL = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi"
 
   # 2. Calls the expiring titles endpoint and passes the country code as a
@@ -13,6 +13,8 @@ class NetflixContentRepo
     ensure_call(query, refresh)
   end
 
+  # 2. Calls the title imdb details endpoint and passes the country code as a
+  # parameter; calls the ensure_call method passing the query previously built
   def load_title(imdb_id, refresh: false)
     query = build_load_title_query(imdb_id)
     ensure_call(query, refresh)
@@ -20,25 +22,34 @@ class NetflixContentRepo
 
   private
 
-  # 3. Checks if the API result exists on the
+  # 3. Checks if the API call result exists on the NetflixApiCall table
   def ensure_call(query, refresh = false, retried = false)
-    # call that was already on db
+    # Fetches an instance of NetflixApiCall from the database with a given query
     cached = NetflixApiCall.find_by(query: query)
 
+    # If the instance is present on the database
     if cached.present?
-      # if refresh true
+      # Calls the refresh method (which calls the API) if the refresh parameter
+      # is true or if the cached instance is old or its body is nil
+      # stale method is defined on the NetflixApiCall model
       return refresh(cached) if refresh || cached.stale?
       cached
     else
-      # 4. creates new call - changed create! to new
+      # 4. If the instance does not exist on the database we create a new
+      # instance and call the refresh method on it to call the API
       refresh(NetflixApiCall.new(query: query))
     end
+  # If an ActiveRecord::RecordInvalid exception occurs the flow is rescued to
+  # call the ensure_call method once more with the retried parameter as true
+  # If we get the same exception once again the program terminates
   rescue ActiveRecord::RecordInvalid
     raise if retried
     ensure_call(query, refresh, true)
   end
 
-  # 4.
+  # 5. The refresh method calls the fetch method which performs the API call
+  # The parameter is an instance of NetflixApiCall and the instance's body
+  # is the result of the fetch method for the corresponding query
   def refresh(call)
     call.body = fetch(call.query)
     call.save!
@@ -48,19 +59,22 @@ class NetflixContentRepo
   # 1. Returns the UNOGS API query for expiring titles
   def build_all_expiring_query(country_code)
     "q=get%3Aexp%3A#{country_code}&t=ns&st=adv&p=1"
-    # ALL THE MOVIES FROM ALL THE COUNTRIES
-    # url = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=#{country_code}&t=ns&st=adv&p=1"
   end
 
+  # 1. Returns the UNOGS API query for title imdb details
   def build_load_title_query(imdb_id)
     "t=loadvideo&q=#{imdb_id}"
   end
 
+  # 6. Calls the UNOGS API
   def fetch(query)
+    # Returns the string if the API key is missing
     raise "Missing API key" if ENV['X_RAPIDAPI_KEY'].empty?
 
+    # Builds the URL
     url = URI(API_URL + "?#{query}")
 
+    # Given by UNOGS
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
