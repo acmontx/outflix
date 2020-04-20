@@ -83,8 +83,23 @@ class NetflixContentRepo
     request["x-rapidapi-host"] = 'unogs-unogs-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
 
-    response = http.request(request)
+    # If the API result includes an empty string we get an error and the call
+    # execution stops, so we need to retry the call; below we set the code to
+    # retry 3 times if we get the JSON::ParserError exception
+    attempt_count = 0
+    max_attempts = 3
 
-    JSON.parse response.read_body
+    begin
+      response = http.request(request)
+      attempt_count += 1
+      puts "attempt ##{attempt_count}"
+      JSON.parse response.read_body
+    rescue JSON::ParserError => e
+      puts "error: #{e}"
+      sleep 3
+      retry if attempt_count < max_attempts
+      # If at the 3rd time we still get the exception execution stops
+      raise
+    end
   end
 end
