@@ -3,6 +3,7 @@ Outflix is an expiring content tracker that notifies its users weekly or mothly 
 This app was built for Le Wagon's demo day of batch #346 in Lisbon.
 
 TODOs:
+- Add tests!
 - Call the UNOGS API more often (e.g twice a week) as UNOGS results are not cumulative;
 - Allow users to receive both the SMSs and the emails;
 - Add filters to the notifications so that it's more tailored to user (e.g 'only notify me of a drama genre titles leaving Netflix' or 'Don't notify me of animation genre titles' or 'Only notify me of TV shows leaving Netflix';
