@@ -85,9 +85,9 @@ class NetflixContentRepo
 
     # If the API result includes an empty string we get an error and the call
     # execution stops, so we need to retry the call; below we set the code to
-    # retry 3 times if we get the JSON::ParserError exception
+    # retry 5 times if we get the JSON::ParserError exception
     attempt_count = 0
-    max_attempts = 3
+    max_attempts = 5
 
     begin
       response = http.request(request)
@@ -98,7 +98,7 @@ class NetflixContentRepo
       puts "error: #{e}"
       sleep 3
       retry if attempt_count < max_attempts
-      # If at the 3rd time we still get the exception execution stops
+      # If at the 5th time we still get the exception execution stops
       raise
     end
   end
