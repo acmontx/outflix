@@ -84,8 +84,8 @@ class NetflixContentRepo
     request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
 
     # If the API result includes an empty string we get an error and the call
-    # execution stops, so we need to retry the call; below we set the code to
-    # retry 5 times if we get the JSON::ParserError exception
+    # execution stops, so we need to retry the request; below we set the code to
+    # retry 3 times if we get the JSON::ParserError exception
     attempt_count = 0
     max_attempts = 3
 
@@ -98,8 +98,6 @@ class NetflixContentRepo
       puts "error: #{e}"
       sleep 3 * attempt_count
       retry if attempt_count < max_attempts
-      # If at the 5th time we still get the exception execution stops, body is nil
-      nil
     end
   end
 end

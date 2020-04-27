@@ -88,8 +88,8 @@ class FetchTitlesService
         runtime: item["runtime"]
       }
 
-      # If the item's imdb_id is different than 'notfound'
-      if imdb_id != "notfound"
+      # If the item's imdb_id is different than 'notfound' or ''
+      if !empty_imdbid?(imdb_id)
         # Calls the load_title from the NetflixContentRepo service and fetches
         # the movie for the corresponding item
         movie = @repo.load_title(imdb_id)
@@ -144,7 +144,7 @@ class FetchTitlesService
           expiring = @repo.all_expiring(country_code, refresh: true)
           # Calls the load_title method to make a new API imdb details call for
           # that country code if the imdb_id is different than 'notfound'
-          expiring.body["ITEMS"].reject { |i| i["imdbid"] == "notfound" }.each do |item|
+          expiring.body["ITEMS"].reject { |i| empty_imdbid?(i["imdbid"]) }.each do |item|
             @repo.load_title(item["imdbid"].strip, refresh: true)
           end
         end
@@ -154,5 +154,11 @@ class FetchTitlesService
     # Threads that finished are joined to the ones running so that the process
     # doesn't exit while others are still pending
     country_threads.each(&:join)
+  end
+
+  private
+
+  def empty_imdbid?(imdb_id)
+    imdb_id == "notfound" || imdb_id == ""
   end
 end

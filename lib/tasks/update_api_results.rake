@@ -7,7 +7,7 @@ namespace :outflix do
       puts "Calling UNOGS API to update NetflixApiCall table..."
       @service = FetchTitlesService.new
       @service.refresh_api_cache
-      puts "All done! NetflixApiCall updated."
+      puts "All done! NetflixApiCall table updated."
     else
       puts "This task should only be executed on Mondays. Over and out!"
     end

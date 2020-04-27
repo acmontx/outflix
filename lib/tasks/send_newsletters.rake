@@ -7,6 +7,8 @@ namespace :outflix do
     # if its notification preference is monthly
     # call newsletter every 4 weeks
 
+    puts "Sending emails and text messages to users..."
+
     # if Date.today.monday?
     if Date.today.tuesday?
       weekly_users = User.where(frequency: "Weekly")
@@ -33,5 +35,7 @@ namespace :outflix do
     else
       puts "This task should only be executed on the 1st day of every month. Over and out!"
     end
+
+    puts "Done! Texts and messages sent."
   end
 end
