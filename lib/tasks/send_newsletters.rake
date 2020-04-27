@@ -7,7 +7,8 @@ namespace :outflix do
     # if its notification preference is monthly
     # call newsletter every 4 weeks
 
-    if Date.today.monday?
+    # if Date.today.monday?
+    if Date.today.tuesday?
       weekly_users = User.where(frequency: "Weekly")
       weekly_users.each do |user|
         if user[:medium] == 'Email'

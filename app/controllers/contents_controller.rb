@@ -2,9 +2,9 @@ require 'date'
 
 class ContentsController < ApplicationController
   def index # /contents
-    # Calls the class method expiring_next passing the current_user as argument
-    # This method returns @contents = Content.where(country_code: user.country)
-    @contents = Content.expiring_next(current_user)
+    # @contents = Content.expiring_next(current_user)
+    # Fetches the expiring content from Content table for the current_user
+    @contents = Content.where(country_code: current_user.country)
     # Calls the filter_content method below to access the filters on dashboard
     filter_content
     # Defines available params for the filters

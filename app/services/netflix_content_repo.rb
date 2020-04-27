@@ -87,19 +87,19 @@ class NetflixContentRepo
     # execution stops, so we need to retry the call; below we set the code to
     # retry 5 times if we get the JSON::ParserError exception
     attempt_count = 0
-    max_attempts = 5
+    max_attempts = 3
 
     begin
       response = http.request(request)
       attempt_count += 1
-      puts "attempt ##{attempt_count}"
+      puts "attempt ##{attempt_count} - #{url}"
       JSON.parse response.read_body
     rescue JSON::ParserError => e
       puts "error: #{e}"
-      sleep 3
+      sleep 3 * attempt_count
       retry if attempt_count < max_attempts
-      # If at the 5th time we still get the exception execution stops
-      raise
+      # If at the 5th time we still get the exception execution stops, body is nil
+      nil
     end
   end
 end
