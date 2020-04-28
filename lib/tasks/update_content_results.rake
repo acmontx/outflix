@@ -1,8 +1,7 @@
 namespace :outflix do
   desc "Fetch the updated API results and load them to contents"
   task update_content_results: :environment do
-    # if Time.now.to_date.monday?
-    if Time.now.to_date.tuesday?
+    if Time.now.to_date.monday?
       puts "Checking new API results..."
       # Grabbing all possible country codes
       country_codes = FetchTitlesService::API_COUNTRIES.values.map { |c| c[:code] }

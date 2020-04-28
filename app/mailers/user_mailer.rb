@@ -15,8 +15,7 @@ class UserMailer < ApplicationMailer
   def newsletter
     # Sets the user and makes it avaialable in the view
     @user = params[:user]
-    # Calls the expiring_next method on Content model to get the expiring titles
-    # for the user's country
+    # Fetches contents to get expiring titles for the user's country
     @contents = Content.where(country_code: @user.country)
     # Organizes @contents by calendar week, sorted
     @weeks = @contents.group_by { |content| content.expiration_date.cweek }.sort
